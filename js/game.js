@@ -11,9 +11,22 @@ const startButton = document.querySelector("#start-game");
 const gameMessage = document.querySelector("#game-message");
 const scoreDisplay = document.querySelector("#game-score");
 
+/* MOBILE CONTROLS */
+
+const mobileLeft =
+  document.querySelector("#game-left");
+
+const mobileRight =
+  document.querySelector("#game-right");
+
+const mobileJump =
+  document.querySelector("#game-jump");
+
+
 if (!canvas || !ctx) {
   throw new Error("Game canvas not found.");
 }
+
 
 /* =========================
    GAME SETTINGS
@@ -30,6 +43,7 @@ const MOVE_SPEED = 2.2;
 
 const MAX_HEARTS = 3;
 const INVULNERABILITY_TIME = 1200;
+
 
 /* =========================
    GAME STATE
@@ -56,6 +70,7 @@ const keys = {
 
 let jumpRequested = false;
 
+
 /* =========================
    BUNNY
 ========================= */
@@ -71,6 +86,7 @@ const bunny = {
 
   grounded: false
 };
+
 
 /* =========================
    LEVEL DATA
@@ -88,6 +104,7 @@ const finish = {
   width: 30,
   height: 85
 };
+
 
 /* =========================
    CREATE LEVEL
@@ -128,6 +145,7 @@ function createLevel() {
     { x: 1980, y: 280, width: 220, height: 40 }
   ];
 
+
   /* =========================
      COLLECTIBLES
   ========================= */
@@ -155,6 +173,7 @@ function createLevel() {
     { x: 2100, y: 235, collected: false }
 
   ];
+
 
   /* =========================
      BUGS
@@ -224,6 +243,7 @@ function createLevel() {
 
   ];
 
+
   /* =========================
      CHECKPOINTS
   ========================= */
@@ -249,9 +269,11 @@ function createLevel() {
   particles = [];
 }
 
+
 /* =========================================================
    DRAWING
 ========================================================= */
+
 
 /* =========================
    BUNNY
@@ -270,6 +292,7 @@ function drawBunny() {
   const x = Math.round(bunny.x - cameraX);
   const y = Math.round(bunny.y);
 
+
   /* ears */
 
   ctx.fillStyle = "#ffffff";
@@ -277,10 +300,12 @@ function drawBunny() {
   ctx.fillRect(x + 3, y - 11, 6, 13);
   ctx.fillRect(x + 15, y - 11, 6, 13);
 
+
   /* body */
 
   ctx.fillRect(x + 1, y, 23, 18);
   ctx.fillRect(x + 3, y + 7, 19, 18);
+
 
   /* inner ears */
 
@@ -289,6 +314,7 @@ function drawBunny() {
   ctx.fillRect(x + 5, y - 8, 2, 8);
   ctx.fillRect(x + 17, y - 8, 2, 8);
 
+
   /* eyes */
 
   ctx.fillStyle = "#17152a";
@@ -296,11 +322,13 @@ function drawBunny() {
   ctx.fillRect(x + 6, y + 6, 3, 3);
   ctx.fillRect(x + 16, y + 6, 3, 3);
 
+
   /* nose */
 
   ctx.fillStyle = "#ef9fc4";
 
   ctx.fillRect(x + 11, y + 11, 4, 3);
+
 
   /* feet */
 
@@ -309,6 +337,7 @@ function drawBunny() {
   ctx.fillRect(x - 2, y + 23, 9, 5);
   ctx.fillRect(x + 17, y + 23, 9, 5);
 }
+
 
 /* =========================
    BUG
@@ -340,6 +369,7 @@ function drawBug(bug) {
   ctx.fillRect(x + 13, y + 6, 3, 3);
 }
 
+
 /* =========================
    STAR
 ========================= */
@@ -359,6 +389,7 @@ function drawStar(star) {
   ctx.fillRect(x, y + 4, 12, 4);
   ctx.fillRect(x + 3, y + 3, 6, 6);
 }
+
 
 /* =========================
    CHECKPOINT
@@ -392,6 +423,7 @@ function drawCheckpoint(checkpoint, index) {
     248
   );
 }
+
 
 /* =========================
    FINISH FLAG
@@ -436,6 +468,7 @@ function drawFinish() {
     6
   );
 }
+
 
 /* =========================
    HEART UI
@@ -482,6 +515,7 @@ function drawHearts() {
   }
 }
 
+
 /* =========================
    DATA UI
 ========================= */
@@ -520,6 +554,7 @@ function drawDataCounter() {
   );
 }
 
+
 /* =========================
    CHECKPOINT UI
 ========================= */
@@ -555,6 +590,7 @@ function drawCheckpointUI() {
   );
 }
 
+
 /* =========================
    WORLD
 ========================= */
@@ -568,6 +604,7 @@ function drawWorld() {
     HEIGHT
   );
 
+
   /* sky */
 
   ctx.fillStyle = "#b9d8ff";
@@ -578,6 +615,7 @@ function drawWorld() {
     WIDTH,
     HEIGHT
   );
+
 
   /* clouds */
 
@@ -617,6 +655,7 @@ function drawWorld() {
       19
     );
   });
+
 
   /* platforms */
 
@@ -667,9 +706,11 @@ function drawWorld() {
     }
   });
 
+
   /* stars */
 
   stars.forEach(drawStar);
+
 
   /* checkpoints */
 
@@ -677,13 +718,16 @@ function drawWorld() {
     drawCheckpoint
   );
 
+
   /* bugs */
 
   bugs.forEach(drawBug);
 
+
   /* flag */
 
   drawFinish();
+
 
   /* particles */
 
@@ -701,9 +745,11 @@ function drawWorld() {
     );
   });
 
+
   /* bunny */
 
   drawBunny();
+
 
   /* UI */
 
@@ -711,6 +757,7 @@ function drawWorld() {
   drawDataCounter();
   drawCheckpointUI();
 }
+
 
 /* =========================================================
    PHYSICS
@@ -736,6 +783,7 @@ function updateBunny() {
     )
   );
 
+
   /* jump */
 
   if (
@@ -750,6 +798,7 @@ function updateBunny() {
 
   jumpRequested = false;
 
+
   /* gravity */
 
   bunny.velocityY += GRAVITY;
@@ -759,6 +808,7 @@ function updateBunny() {
   bunny.y += bunny.velocityY;
 
   bunny.grounded = false;
+
 
   /* platform landing */
 
@@ -797,6 +847,7 @@ function updateBunny() {
     }
   }
 
+
   /* fell into a gap */
 
   if (
@@ -809,6 +860,7 @@ function updateBunny() {
     return;
   }
 }
+
 
 /* =========================================================
    STARS
@@ -858,6 +910,7 @@ function collectStars() {
   }
 }
 
+
 /* =========================================================
    BUGS
 ========================================================= */
@@ -894,6 +947,7 @@ function updateBugs() {
   }
 }
 
+
 function rectanglesOverlap(a, b) {
 
   return (
@@ -907,6 +961,7 @@ function rectanglesOverlap(a, b) {
       b.y
   );
 }
+
 
 function checkBugCollisions() {
 
@@ -931,6 +986,7 @@ function checkBugCollisions() {
     ) {
       continue;
     }
+
 
     /*
       If bunny is falling onto bug,
@@ -972,6 +1028,7 @@ function checkBugCollisions() {
       continue;
     }
 
+
     /* normal hit */
 
     loseHeart();
@@ -979,6 +1036,7 @@ function checkBugCollisions() {
     return;
   }
 }
+
 
 /* =========================================================
    CHECKPOINTS
@@ -1028,6 +1086,7 @@ function updateCheckpoints() {
   );
 }
 
+
 /* =========================================================
    DAMAGE / RESPAWN
 ========================================================= */
@@ -1054,6 +1113,7 @@ function loseHeart() {
     18
   );
 
+
   if (hearts <= 0) {
 
     hearts = 0;
@@ -1064,6 +1124,7 @@ function loseHeart() {
 
     return;
   }
+
 
   /*
     Respawn at the latest checkpoint.
@@ -1081,10 +1142,12 @@ function loseHeart() {
   );
 }
 
+
 function respawnBunny() {
 
   let spawnX = 70;
   let spawnY = 250;
+
 
   if (
     lastCheckpoint === 1
@@ -1097,6 +1160,7 @@ function respawnBunny() {
       checkpoints[0].spawnY;
   }
 
+
   if (
     lastCheckpoint === 2
   ) {
@@ -1108,12 +1172,14 @@ function respawnBunny() {
       checkpoints[1].spawnY;
   }
 
+
   bunny.x = spawnX;
   bunny.y = spawnY;
 
   bunny.velocityY = 0;
 
   bunny.grounded = true;
+
 
   /*
     Keep all collected stars.
@@ -1126,6 +1192,7 @@ function respawnBunny() {
 
   updateCamera();
 }
+
 
 /* =========================================================
    FINISH
@@ -1145,6 +1212,7 @@ function checkFinish() {
       star => star.collected
     );
 
+
   if (!everythingCollected) {
 
     bunny.x =
@@ -1159,8 +1227,10 @@ function checkFinish() {
     return;
   }
 
+
   winGame();
 }
+
 
 /* =========================================================
    CAMERA
@@ -1184,6 +1254,7 @@ function updateCamera() {
     )
   );
 }
+
 
 /* =========================================================
    PARTICLES
@@ -1223,6 +1294,7 @@ function createParticles(
   }
 }
 
+
 function updateParticles() {
 
   for (const particle of particles) {
@@ -1246,6 +1318,7 @@ function updateParticles() {
     );
 }
 
+
 /* =========================================================
    SCORE
 ========================================================= */
@@ -1263,6 +1336,7 @@ function updateScore() {
       ).padStart(4, "0")
     }`;
 }
+
 
 /* =========================================================
    TOAST
@@ -1294,6 +1368,7 @@ function showToast(message) {
 
     }, 1000);
 }
+
 
 /* =========================================================
    GAME LOOP
@@ -1333,6 +1408,7 @@ function gameLoop() {
     );
 }
 
+
 /* =========================================================
    START
 ========================================================= */
@@ -1366,6 +1442,12 @@ function startGame() {
 
   gameRunning = true;
 
+  keys.left = false;
+  keys.right = false;
+
+  jumpRequested = false;
+
+
   if (gameMessage) {
     gameMessage.style.display =
       "none";
@@ -1381,6 +1463,7 @@ function startGame() {
     );
 }
 
+
 /* =========================================================
    GAME OVER
 ========================================================= */
@@ -1393,9 +1476,15 @@ function endGame() {
     animationFrame
   );
 
+  keys.left = false;
+  keys.right = false;
+  jumpRequested = false;
+
+
   if (!gameMessage) {
     return;
   }
+
 
   gameMessage.innerHTML = `
 
@@ -1422,8 +1511,10 @@ function endGame() {
 
   `;
 
+
   gameMessage.style.display =
     "flex";
+
 
   document
     .querySelector(
@@ -1434,6 +1525,7 @@ function endGame() {
       startGame
     );
 }
+
 
 /* =========================================================
    WIN
@@ -1456,6 +1548,11 @@ function winGame() {
     animationFrame
   );
 
+  keys.left = false;
+  keys.right = false;
+  jumpRequested = false;
+
+
   createParticles(
     finish.x,
     finish.y,
@@ -1465,10 +1562,12 @@ function winGame() {
 
   drawWorld();
 
+
   const finalScore =
     String(
       Math.floor(score)
     ).padStart(4, "0");
+
 
   gameMessage.innerHTML = `
 
@@ -1522,8 +1621,10 @@ function winGame() {
 
   `;
 
+
   gameMessage.style.display =
     "flex";
+
 
   document
     .querySelector(
@@ -1542,6 +1643,7 @@ function winGame() {
       }
     );
 
+
   document
     .querySelector(
       "#restart-game"
@@ -1551,6 +1653,7 @@ function winGame() {
       startGame
     );
 }
+
 
 /* =========================================================
    KEYBOARD
@@ -1564,29 +1667,39 @@ document.addEventListener(
       event.key ===
       "ArrowLeft"
     ) {
+
       keys.left = true;
+
       event.preventDefault();
     }
+
 
     if (
       event.key ===
       "ArrowRight"
     ) {
+
       keys.right = true;
+
       event.preventDefault();
     }
+
 
     if (
       event.key.toLowerCase() === "a"
     ) {
+
       keys.left = true;
     }
+
 
     if (
       event.key.toLowerCase() === "d"
     ) {
+
       keys.right = true;
     }
+
 
     if (
       event.code === "Space"
@@ -1595,12 +1708,14 @@ document.addEventListener(
       event.preventDefault();
 
       if (!event.repeat) {
+
         jumpRequested = true;
       }
     }
 
   }
 );
+
 
 document.addEventListener(
   "keyup",
@@ -1612,8 +1727,10 @@ document.addEventListener(
       event.key.toLowerCase() ===
       "a"
     ) {
+
       keys.left = false;
     }
+
 
     if (
       event.key ===
@@ -1621,11 +1738,171 @@ document.addEventListener(
       event.key.toLowerCase() ===
       "d"
     ) {
+
       keys.right = false;
     }
 
   }
 );
+
+
+/* =========================================================
+   MOBILE TOUCH CONTROLS
+========================================================= */
+
+/*
+   LEFT / RIGHT:
+   Hold the button to keep moving.
+
+   JUMP:
+   Tap once to jump.
+
+   Pointer events work for both:
+   - touch screens
+   - mouse
+   - trackpads
+*/
+
+
+function bindMovementButton(
+  button,
+  direction
+) {
+
+  if (!button) {
+    return;
+  }
+
+
+  button.addEventListener(
+    "pointerdown",
+    event => {
+
+      event.preventDefault();
+
+      if (!gameRunning) {
+        return;
+      }
+
+      button.setPointerCapture?.(
+        event.pointerId
+      );
+
+      keys[direction] = true;
+    }
+  );
+
+
+  button.addEventListener(
+    "pointerup",
+    event => {
+
+      event.preventDefault();
+
+      keys[direction] = false;
+    }
+  );
+
+
+  button.addEventListener(
+    "pointercancel",
+    () => {
+
+      keys[direction] = false;
+    }
+  );
+
+
+  button.addEventListener(
+    "lostpointercapture",
+    () => {
+
+      keys[direction] = false;
+    }
+  );
+}
+
+
+/* LEFT */
+
+bindMovementButton(
+  mobileLeft,
+  "left"
+);
+
+
+/* RIGHT */
+
+bindMovementButton(
+  mobileRight,
+  "right"
+);
+
+
+/* =========================================================
+   MOBILE JUMP
+========================================================= */
+
+if (mobileJump) {
+
+  mobileJump.addEventListener(
+    "pointerdown",
+    event => {
+
+      event.preventDefault();
+
+      if (!gameRunning) {
+        return;
+      }
+
+      mobileJump.setPointerCapture?.(
+        event.pointerId
+      );
+
+      jumpRequested = true;
+    }
+  );
+}
+
+
+/* =========================================================
+   PREVENT MOBILE PAGE SCROLL WHILE
+   INTERACTING WITH THE GAME
+========================================================= */
+
+if (canvas) {
+
+  canvas.addEventListener(
+    "touchstart",
+    event => {
+      event.preventDefault();
+    },
+    {
+      passive: false
+    }
+  );
+
+  canvas.addEventListener(
+    "touchmove",
+    event => {
+      event.preventDefault();
+    },
+    {
+      passive: false
+    }
+  );
+
+  canvas.addEventListener(
+    "touchend",
+    event => {
+      event.preventDefault();
+    },
+    {
+      passive: false
+    }
+  );
+}
+
 
 /* =========================================================
    START BUTTON
@@ -1635,6 +1912,7 @@ startButton?.addEventListener(
   "click",
   startGame
 );
+
 
 /* =========================================================
    INITIAL DRAW

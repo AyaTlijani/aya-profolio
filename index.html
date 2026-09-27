@@ -1346,108 +1346,143 @@
 
     <!-- ================= MINI GAME ================= -->
 
-    <section class="arcade">
+    <!-- ================= MINI GAME ================= -->
 
-      <div class="arcade-window">
+<section class="arcade">
 
-        <div class="arcade-header">
+  <div class="arcade-window">
 
-          <div class="window-controls">
-            <button>_</button>
-            <button>□</button>
-            <button>×</button>
-          </div>
+    <div class="arcade-header">
 
-          <span>AYA'S LITTLE ARCADE.exe</span>
+      <div class="window-controls">
+        <button>_</button>
+        <button>□</button>
+        <button>×</button>
+      </div>
 
-        </div>
+      <span>AYA'S LITTLE ARCADE.exe</span>
 
-        <div class="arcade-intro">
+    </div>
 
-          <div>
+    <div class="arcade-intro">
 
-            <p
-              class="eyebrow"
-              data-i18n="game.bonus"
-            >
-              BONUS AREA
-            </p>
+      <div>
 
-            <h2 data-i18n="game.title">
-              You've reached<br>
-              the end of the internet.
-            </h2>
+        <p
+          class="eyebrow"
+          data-i18n="game.bonus"
+        >
+          BONUS AREA
+        </p>
 
-            <p data-i18n="game.description">
-              So... here's a tiny game instead.
-            </p>
+        <h2 data-i18n="game.title">
+          You've reached<br>
+          the end of the internet.
+        </h2>
 
-          </div>
-
-          <div class="hearts">
-            ♥ ♥ ♥
-          </div>
-
-        </div>
-
-        <div class="game-wrapper">
-
-          <canvas
-            id="game"
-            width="720"
-            height="320"
-            aria-label="Pixel bunny mini game"
-            data-i18n-aria="game.pixelBunny"
-          ></canvas>
-
-          <div
-            class="game-message"
-            id="game-message"
-          >
-
-            <div class="game-title">
-              ✦ PIXEL BUNNY ✦
-            </div>
-
-            <p data-i18n="game.instructions">
-              Collect the stars.<br>
-              Don't fall.
-            </p>
-
-            <button
-              id="start-game"
-              data-i18n="game.start"
-            >
-              START GAME
-            </button>
-
-            <small data-i18n="game.controls">
-              ← → / A D to move · SPACE to jump
-            </small>
-
-          </div>
-
-        </div>
-
-        <div class="arcade-footer">
-
-          <span id="game-score">
-            SCORE 0000
-          </span>
-
-          <span>
-            ✦ ✧ ✦ ✧ ✦
-          </span>
-
-          <span data-i18n="game.pressSpace">
-            PRESS SPACE
-          </span>
-
-        </div>
+        <p data-i18n="game.description">
+          So... here's a tiny game instead.
+        </p>
 
       </div>
 
-    </section>
+      <div class="hearts">
+        ♥ ♥ ♥
+      </div>
+
+    </div>
+
+    <div class="game-wrapper">
+
+      <canvas
+        id="game"
+        width="720"
+        height="320"
+        aria-label="Pixel bunny mini game"
+        data-i18n-aria="game.pixelBunny"
+      ></canvas>
+
+      <div
+        class="game-message"
+        id="game-message"
+      >
+
+        <div class="game-title">
+          ✦ PIXEL BUNNY ✦
+        </div>
+
+        <p data-i18n="game.instructions">
+          Collect the stars.<br>
+          Don't fall.
+        </p>
+
+        <button
+          id="start-game"
+          data-i18n="game.start"
+        >
+          START GAME
+        </button>
+
+        <small data-i18n="game.controls">
+          ← → / A D to move · SPACE to jump
+        </small>
+
+      </div>
+
+    </div>
+
+    <!-- MOBILE GAME CONTROLS -->
+
+    <div
+      class="game-controls"
+      aria-label="Game controls"
+    >
+
+      <button
+        type="button"
+        id="game-left"
+        aria-label="Move left"
+      >
+        ←
+      </button>
+
+      <button
+        type="button"
+        id="game-jump"
+        aria-label="Jump"
+      >
+        JUMP
+      </button>
+
+      <button
+        type="button"
+        id="game-right"
+        aria-label="Move right"
+      >
+        →
+      </button>
+
+    </div>
+
+    <div class="arcade-footer">
+
+      <span id="game-score">
+        SCORE 0000
+      </span>
+
+      <span>
+        ✦ ✧ ✦ ✧ ✦
+      </span>
+
+      <span data-i18n="game.pressSpace">
+        PRESS SPACE
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
 
   </main>
 
