@@ -9,7 +9,6 @@ const ctx = canvas?.getContext("2d");
 
 const startButton = document.querySelector("#start-game");
 const gameMessage = document.querySelector("#game-message");
-const scoreDisplay = document.querySelector("#game-score");
 
 /* MOBILE CONTROLS */
 
@@ -52,7 +51,6 @@ const INVULNERABILITY_TIME = 1200;
 let gameRunning = false;
 let gameWon = false;
 
-let score = 0;
 let hearts = MAX_HEARTS;
 
 let cameraX = 0;
@@ -892,16 +890,12 @@ function collectStars() {
 
       star.collected = true;
 
-      score += 100;
-
       createParticles(
         star.x,
         star.y,
         "#ff9ac8",
         10
       );
-
-      updateScore();
 
       showToast(
         "✦ DATA COLLECTED!"
@@ -1010,16 +1004,12 @@ function checkBugCollisions() {
       bunny.velocityY =
         JUMP_FORCE * 0.55;
 
-      score += 150;
-
       createParticles(
         bug.x,
         bug.y,
         "#806ed0",
         12
       );
-
-      updateScore();
 
       showToast(
         "✦ BUG FIXED!"
@@ -1117,8 +1107,6 @@ function loseHeart() {
   if (hearts <= 0) {
 
     hearts = 0;
-
-    updateScore();
 
     endGame();
 
@@ -1320,25 +1308,6 @@ function updateParticles() {
 
 
 /* =========================================================
-   SCORE
-========================================================= */
-
-function updateScore() {
-
-  if (!scoreDisplay) {
-    return;
-  }
-
-  scoreDisplay.textContent =
-    `SCORE ${
-      String(
-        Math.floor(score)
-      ).padStart(4, "0")
-    }`;
-}
-
-
-/* =========================================================
    TOAST
 ========================================================= */
 
@@ -1396,10 +1365,6 @@ function gameLoop() {
 
   updateCamera();
 
-  score += 0.01;
-
-  updateScore();
-
   drawWorld();
 
   animationFrame =
@@ -1432,8 +1397,6 @@ function startGame() {
 
   hearts = MAX_HEARTS;
 
-  score = 0;
-
   lastCheckpoint = 0;
 
   invulnerableUntil = 0;
@@ -1452,8 +1415,6 @@ function startGame() {
     gameMessage.style.display =
       "none";
   }
-
-  updateScore();
 
   drawWorld();
 
@@ -1563,12 +1524,6 @@ function winGame() {
   drawWorld();
 
 
-  const finalScore =
-    String(
-      Math.floor(score)
-    ).padStart(4, "0");
-
-
   gameMessage.innerHTML = `
 
     <div class="game-title">
@@ -1579,8 +1534,6 @@ function winGame() {
       YOU WON!
       <br>
       ALL DATA COLLECTED.
-      <br>
-      SCORE ${finalScore}
     </p>
 
     <p class="game-joke">
