@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aya Tlijani — Data Science & AI</title>
+
+  <meta
+    name="description"
+    content="Portfolio of Aya Tlijani, Computer Science engineering student specializing in Data Science and Artificial Intelligence."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ================= NAV ================= -->
+
+  <header class="taskbar">
+    <div class="taskbar-inner">
+
+      <a href="#home" class="logo">
+        <span class="logo-icon">✦</span>
+        aya.exe
+      </a>
+
+      <nav id="main-nav">
+        <a href="#home" data-i18n="nav.home">home</a>
+        <a href="#about" data-i18n="nav.about">about</a>
+        <a href="#experience" data-i18n="nav.experience">experience</a>
+        <a href="#projects" data-i18n="nav.projects">projects</a>
+        <a href="#skills" data-i18n="nav.skills">skills</a>
+        <a href="#education" data-i18n="nav.education">education</a>
+        <a href="#contact" data-i18n="nav.contact">contact</a>
+      </nav>
+
+      <!-- LANGUAGE SWITCH -->
+      <div class="language-switch" aria-label="Language selector">
+
+        <button
+          type="button"
+          class="language-button active"
+          data-language="en"
+        >EN</button>
+
+        <span>/</span>
+
+        <button
+          type="button"
+          class="language-button"
+          data-language="fr"
+        >FR</button>
+
+      </div>
+
+      <button
+        class="nav-toggle"
+        aria-label="Open menu"
+        data-i18n-aria="nav.openMenu"
+      >☰</button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+
+    <section id="home" class="hero section">
+
+      <div class="cloud cloud-one">☁</div>
+      <div class="cloud cloud-two">☁</div>
+
+      <div class="star star-one">✦</div>
+      <div class="star star-two">✧</div>
+      <div class="star star-three">✦</div>
+
+      <div class="hero-grid">
+
+        <div class="hero-copy">
+
+          <div class="online-badge">
+            <span></span>
+            online
+          </div>
+
+          <p
+            class="eyebrow"
+            data-i18n="hero.eyebrow"
+          >
+            DATA SCIENCE & AI ENGINEERING
+          </p>
+
+          <h1>
+            Aya<br>
+            <span>Tlijani</span>
+          </h1>
+
+          <p
+            class="hero-text"
+            data-i18n="hero.description"
+          >
+            Computer Science engineering student specializing in
+            Data Science and Artificial Intelligence, interested in
+            machine learning, data, research and software engineering.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              href="#projects"
+              class="button primary"
+              data-i18n="hero.explore"
+            >
+              explore my work ↘
+            </a>
+
+            <button
+              type="button"
+              class="button secondary"
+              id="cv-choice-button"
+              aria-haspopup="dialog"
+              aria-expanded="false"
+              data-i18n="hero.downloadCV"
+            >
+              download CV
+            </button>
+
+          </div>
+
+          <div class="hero-links">
+
+            <a
+              href="https://github.com/AyaTlijani"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub ↗
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/aya-tlijani-19489a317/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn ↗
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="retro-window hero-window">
+
+          <div class="window-header blue-header">
+
+            <div class="window-controls">
+              <button>_</button>
+              <button>□</button>
+              <button>×</button>
+            </div>
+
+            <span>aya_profile.exe</span>
+
+          </div>
+
+          <div class="window-body terminal">
+
+            <div class="terminal-top">
+              <span>
+                ◉ <span data-i18n="terminal.system">SYSTEM</span>
+              </span>
+
+              <span data-i18n="terminal.online">
+                ONLINE
+              </span>
+            </div>
+
+            <p>
+              <b>guest@aya</b>:~$
+              <span data-i18n="terminal.helloCommand">hello</span>
+            </p>
+
+            <div
+              class="terminal-box"
+              data-i18n="terminal.welcome"
+            >
+              Welcome to Aya's little corner
+              of the internet ♡
+            </div>
+
+            <p>
+              <b>guest@aya</b>:~$
+              <span data-i18n="terminal.field">field</span>
+            </p>
+
+            <div class="terminal-value">
+              <span data-i18n="about.ds">Data Science</span><br>
+              <span data-i18n="about.ai">Artificial Intelligence</span>
+            </div>
+
+            <p>
+              <b>guest@aya</b>:~$
+              <span data-i18n="terminal.location">location</span>
+            </p>
+
+            <div
+              class="terminal-value"
+              data-i18n="terminal.city"
+            >
+              Monastir, Tunisia
+            </div>
+
+            <div class="terminal-bottom">
+
+              <span data-i18n="terminal.status">
+                STATUS
+              </span>
+
+              <strong data-i18n="terminal.available">
+                AVAILABLE
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="scroll-hint"
+        data-i18n="hero.scroll"
+      >
+        ↓ scroll to enter
+      </div>
+
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          01 /
+          <span data-i18n="sections.about">
+            ABOUT
+          </span>
+        </p>
+
+        <h2 data-i18n="about.title">
+          A little bit about me.
+        </h2>
+
+      </div>
+
+      <div class="about-grid">
+
+        <div class="retro-window photo-window">
+
+          <div class="window-header purple-header">
+
+            <div class="window-controls">
+              <button>_</button>
+              <button>□</button>
+              <button>×</button>
+            </div>
+
+            <span>photo.jpg</span>
+
+          </div>
+
+          <div class="photo-area">
+
+            <img
+              src="assets/profile-photo.jpg"
+              alt="Portrait of Aya Tlijani"
+              id="profile-photo"
+            >
+
+          </div>
+
+          <div class="window-status">
+
+            <span data-i18n="about.location">
+              MONASTIR / TUNISIA
+            </span>
+
+            <span>♡</span>
+
+          </div>
+
+        </div>
+
+        <div class="about-content">
+
+          <div
+            class="speech-bubble"
+            data-i18n="about.hello"
+          >
+            Hi! I'm Aya ✦
+          </div>
+
+          <p data-i18n="about.paragraph1">
+            Aya is an engineering student in Computer Science,
+            specializing in Data Science and Artificial Intelligence,
+            with experience in data analysis, machine learning,
+            research and software development.
+          </p>
+
+          <p data-i18n="about.paragraph2">
+            Her work moves between research, applied AI and
+            practical engineering — from graph-based optimization
+            to educational data and deep learning projects.
+          </p>
+
+          <div class="about-grid-small">
+
+            <div>
+              <strong>DS</strong>
+              <span data-i18n="about.ds">
+                Data Science
+              </span>
+            </div>
+
+            <div>
+              <strong>AI</strong>
+              <span data-i18n="about.ai">
+                Artificial Intelligence
+              </span>
+            </div>
+
+            <div>
+              <strong>ML</strong>
+              <span data-i18n="about.ml">
+                Machine Learning
+              </span>
+            </div>
+
+            <div>
+              <strong>DEV</strong>
+              <span data-i18n="about.dev">
+                Software Development
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <section id="experience" class="section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          02 /
+          <span data-i18n="sections.experience">
+            EXPERIENCE
+          </span>
+        </p>
+
+        <h2 data-i18n="experience.title">
+          Where I've been building.
+        </h2>
+
+      </div>
+
+      <div class="experience-list">
+
+        <!-- UEL -->
+
+        <article class="experience-card lavender">
+
+          <div class="card-decoration">✦</div>
+
+          <div class="experience-company">
+
+            <div class="company-logo">
+              <img
+                src="assets/uel-logo.png"
+                alt="University of East London logo"
+              >
+            </div>
+
+            <div class="company-info">
+
+              <span class="date">
+                JUL 2026 — SEP 2026
+              </span>
+
+              <h3>
+                University of East London
+                <small data-i18n="experience.uel.lab">
+                  / Research Laboratory
+                </small>
+              </h3>
+
+              <p
+                class="role"
+                data-i18n="experience.uel.role"
+              >
+                Junior Research Assistant · Remote
+              </p>
+
+            </div>
+
+          </div>
+
+          <p data-i18n="experience.uel.description">
+            Working on applying artificial intelligence to
+            project management and resource-constrained
+            scheduling optimization.
+          </p>
+
+          <ul>
+
+            <li data-i18n="experience.uel.bullet1">
+              Developing a solution for the Resource-Constrained
+              Project Scheduling Problem (RCPSP).
+            </li>
+
+            <li data-i18n="experience.uel.bullet2">
+              Implementing a Graph Isomorphism Network (GIN)
+              with Proximal Policy Optimization (PPO) using
+              PyTorch and PyTorch Geometric.
+            </li>
+
+          </ul>
+
+          <div class="tags">
+            <span>PyTorch</span>
+            <span>PyTorch Geometric</span>
+            <span>GIN</span>
+            <span>PPO</span>
+            <span>RCPSP</span>
+          </div>
+
+        </article>
+
+        <!-- AMSYS -->
+
+        <article class="experience-card blue">
+
+          <div class="card-decoration">✧</div>
+
+          <div class="experience-company">
+
+            <div class="company-logo">
+              <img
+                src="assets/amsys-logo.png"
+                alt="AMSYS Consulting logo"
+              >
+            </div>
+
+            <div class="company-info">
+
+              <span class="date">
+                AUG 2026 — SEP 2026
+              </span>
+
+              <h3>
+                AMSYS Consulting
+              </h3>
+
+              <p
+                class="role"
+                data-i18n="experience.amsys.role"
+              >
+                Artificial Intelligence Intern
+              </p>
+
+            </div>
+
+          </div>
+
+          <ul>
+
+            <li data-i18n="experience.amsys.bullet1">
+              Contributed to the design and development of
+              AI pipelines as part of a confidential project.
+            </li>
+
+            <li data-i18n="experience.amsys.bullet2">
+              Designed and evaluated AI workflows for
+              intelligent analysis solutions.
+            </li>
+
+          </ul>
+
+        </article>
+
+        <!-- ESPRIM -->
+
+        <article class="experience-card lavender-blue">
+
+          <div class="card-decoration">★</div>
+
+          <div class="experience-company">
+
+            <div class="company-logo">
+              <img
+                src="assets/esprim-logo.png"
+                alt="ESPRIM logo"
+              >
+            </div>
+
+            <div class="company-info">
+
+              <span class="date">
+                JUL 2026 — AUG 2026
+              </span>
+
+              <h3>
+                ESPRIM
+                <small>/ I5-Assist</small>
+              </h3>
+
+              <p
+                class="role"
+                data-i18n="experience.esprim.role"
+              >
+                Data Science Intern
+              </p>
+
+            </div>
+
+          </div>
+
+          <p data-i18n="experience.esprim.description">
+            Contributed to the design of a five-competency
+            framework and associated evaluation grids within
+            the I5-Assist project.
+          </p>
+
+          <ul>
+
+            <li data-i18n="experience.esprim.bullet1">
+              Developed a pipeline for extraction and feature
+              engineering, transforming learning data into
+              measurable competency indicators.
+            </li>
+
+            <li data-i18n="experience.esprim.bullet2">
+              Applied data analysis and NLP techniques to
+              structured and unstructured educational data.
+            </li>
+
+          </ul>
+
+          <div class="tags">
+            <span>Python</span>
+            <span>NLP</span>
+            <span>Data Analysis</span>
+            <span>Feature Engineering</span>
+          </div>
+
+        </article>
+
+        <!-- GCT -->
+
+        <article class="experience-card sky">
+
+          <div class="card-decoration">♡</div>
+
+          <div class="experience-company">
+
+            <div class="company-logo">
+              <img
+                src="assets/gct-logo.png"
+                alt="GCT Gafsa logo"
+              >
+            </div>
+
+            <div class="company-info">
+
+              <span class="date">
+                JUL 2025 — AUG 2025
+              </span>
+
+              <h3>
+                GCT Gafsa
+              </h3>
+
+              <p
+                class="role"
+                data-i18n="experience.gct.role"
+              >
+                Introductory Internship
+              </p>
+
+            </div>
+
+          </div>
+
+          <p data-i18n="experience.gct.description">
+            IT support, exploration of network infrastructure,
+            and participation in the development of an
+            e-commerce platform with PrestaShop.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section id="projects" class="section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          03 /
+          <span data-i18n="sections.projects">
+            PROJECTS
+          </span>
+        </p>
+
+        <h2 data-i18n="projects.title">
+          Things I've made.
+        </h2>
+
+      </div>
+
+      <!-- ARTISANCONNECT -->
+
+      <article class="project-card artisan-project">
+
+        <div class="project-content">
+
+          <div class="project-topline">
+
+            <span class="project-number">
+              01
+            </span>
+
+            <span
+              class="project-type"
+              data-i18n="projects.artisan.type"
+            >
+              FULL-STACK DEVELOPMENT / E-COMMERCE
+            </span>
+
+          </div>
+
+          <h3>
+            ArtisanConnect
+          </h3>
+
+          <p
+            class="project-sub"
+            data-i18n="projects.artisan.sub"
+          >
+            E-commerce Platform for Artisans.
+          </p>
+
+          <p
+            class="project-description"
+            data-i18n="projects.artisan.description"
+          >
+            Developed a desktop (JavaFX) and web (Symfony/PHP)
+            e-commerce application integrating a product catalog,
+            shopping cart, and user management.
+          </p>
+
+          <div class="tools-label">
+
+            <span data-i18n="projects.techStack">
+              TECH STACK
+            </span>
+
+            <span>✦</span>
+
+          </div>
+
+          <div class="project-tools">
+            <span>JavaFX</span>
+            <span>Symfony</span>
+            <span>PHP</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>SQL</span>
+          </div>
+
+          <div class="project-actions">
+
+            <button
+              class="view-photos-button"
+              type="button"
+              data-gallery="artisan"
+              data-i18n="projects.viewScreenshots"
+            >
+              <span>✦</span>
+              VIEW SCREENSHOTS
+              <b>03 ↗</b>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <!-- BRAIN TUMOR -->
+
+      <article class="project-card blue-project">
+
+        <div class="project-content">
+
+          <div class="project-topline">
+
+            <span class="project-number">
+              02
+            </span>
+
+            <span
+              class="project-type"
+              data-i18n="projects.brain.type"
+            >
+              MEDICAL IMAGE CLASSIFICATION
+            </span>
+
+          </div>
+
+          <h3>
+            Brain Tumor Detection
+          </h3>
+
+          <p
+            class="project-sub"
+            data-i18n="projects.brain.sub"
+          >
+            Medical Image Classification.
+          </p>
+
+          <p
+            class="project-description"
+            data-i18n="projects.brain.description1"
+          >
+            Implemented a convolutional neural network (CNN) in Python
+            to classify brain tumors from MRI images.
+          </p>
+
+          <p
+            class="project-description"
+            data-i18n="projects.brain.description2"
+          >
+            Applied data augmentation techniques and evaluated model
+            performance using accuracy, precision, and recall metrics,
+            with analysis of the results.
+          </p>
+
+          <div class="tools-label">
+
+            <span data-i18n="projects.techStack">
+              TECH STACK
+            </span>
+
+            <span>✦</span>
+
+          </div>
+
+          <div class="project-tools">
+            <span>Python</span>
+            <span>CNN</span>
+            <span>TensorFlow</span>
+            <span>Data Augmentation</span>
+          </div>
+
+          <div class="project-actions">
+
+            <button
+              class="view-photos-button"
+              type="button"
+              data-gallery="brain"
+              data-i18n="projects.viewScreenshot"
+            >
+              <span>✦</span>
+              VIEW SCREENSHOT
+              <b>↗</b>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <!-- FRAUDEX AI -->
+
+      <article class="project-card lavender-project">
+
+        <div class="project-content">
+
+          <div class="project-topline">
+
+            <span class="project-number">
+              03
+            </span>
+
+            <span
+              class="project-type"
+              data-i18n="projects.fraud.type"
+            >
+              BANK FRAUD DETECTION / DEEP LEARNING
+            </span>
+
+          </div>
+
+          <h3>
+            Fraudex AI
+          </h3>
+
+          <p
+            class="project-sub"
+            data-i18n="projects.fraud.sub"
+          >
+            Bank Fraud Detection with Deep Learning.
+          </p>
+
+          <p
+            class="project-description"
+            data-i18n="projects.fraud.description1"
+          >
+            Analyzed and explored a Kaggle transaction dataset using
+            Python, simulated a real-time transaction stream, and
+            implemented a process to detect fraudulent patterns.
+          </p>
+
+          <p
+            class="project-description"
+            data-i18n="projects.fraud.description2"
+          >
+            Designed and deployed a deep learning pipeline in TensorFlow
+            combining an autoencoder, attention mechanisms, and
+            transformer architectures to assign fraud scores to
+            transactions and assess their potential fraud risk.
+          </p>
+
+          <div class="tools-label">
+
+            <span data-i18n="projects.techStack">
+              TECH STACK
+            </span>
+
+            <span>✦</span>
+
+          </div>
+
+          <div class="project-tools">
+            <span>Python</span>
+            <span>TensorFlow</span>
+            <span>Autoencoders</span>
+            <span>Attention</span>
+            <span>Transformers</span>
+            <span>Pandas</span>
+            <span>NumPy</span>
+          </div>
+
+          <div class="project-actions">
+
+            <button
+              class="view-photos-button"
+              type="button"
+              data-gallery="fraudexia"
+              data-i18n="projects.viewScreenshot"
+            >
+              <span>✦</span>
+              VIEW SCREENSHOT
+              <b>↗</b>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <!-- ================= PROJECT PHOTO VIEWER ================= -->
+
+    <div
+      class="project-viewer"
+      id="project-viewer"
+      aria-hidden="true"
+    >
+
+      <div class="project-viewer-window">
+
+        <div class="project-viewer-header">
+
+          <span id="viewer-title">
+            project_preview.exe
+          </span>
+
+          <button
+            type="button"
+            class="viewer-close"
+            aria-label="Close"
+            data-i18n-aria="viewer.close"
+          >
+            ×
+          </button>
+
+        </div>
+
+        <div class="project-viewer-body">
+
+          <button
+            class="viewer-arrow viewer-prev"
+            type="button"
+            aria-label="Previous image"
+            data-i18n-aria="viewer.previous"
+          >
+            ←
+          </button>
+
+          <div class="viewer-image-area">
+
+            <div class="viewer-image-frame">
+
+              <img
+                id="viewer-image"
+                alt=""
+              >
+
+            </div>
+
+            <div class="viewer-counter">
+              <span id="viewer-current">01</span>
+              <span>/</span>
+              <span id="viewer-total">01</span>
+            </div>
+
+          </div>
+
+          <button
+            class="viewer-arrow viewer-next"
+            type="button"
+            aria-label="Next image"
+            data-i18n-aria="viewer.next"
+          >
+            →
+          </button>
+
+        </div>
+
+        <div class="project-viewer-footer">
+
+          <span id="viewer-project-name">
+            PROJECT PREVIEW
+          </span>
+
+          <span data-i18n="viewer.instructions">
+            ← → browse · ESC close
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================= SKILLS ================= -->
+
+    <section id="skills" class="section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          04 /
+          <span data-i18n="sections.skills">
+            SKILLS
+          </span>
+        </p>
+
+        <h2 data-i18n="skills.title">
+          My little toolbox.
+        </h2>
+
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-box lavender">
+
+          <div class="skill-number">01</div>
+          <div class="skill-icon">⌨</div>
+
+          <h3 data-i18n="skills.programming">
+            Programming
+          </h3>
+
+          <div class="skill-list">
+            <span>Python</span>
+            <span>Java</span>
+            <span>PHP</span>
+            <span>SQL</span>
+            <span>C</span>
+            <span>C#</span>
+          </div>
+
+        </div>
+
+        <div class="skill-box blue">
+
+          <div class="skill-number">02</div>
+          <div class="skill-icon">✦</div>
+
+          <h3 data-i18n="skills.dataAI">
+            Data & AI
+          </h3>
+
+          <div class="skill-list">
+            <span>Machine Learning</span>
+            <span>Deep Learning</span>
+            <span>NLP</span>
+            <span>PyTorch</span>
+            <span>TensorFlow</span>
+            <span>CNN</span>
+            <span>Graph Neural Networks</span>
+          </div>
+
+        </div>
+
+        <div class="skill-box sky">
+
+          <div class="skill-number">03</div>
+          <div class="skill-icon">◇</div>
+
+          <h3 data-i18n="skills.web">
+            Web
+          </h3>
+
+          <div class="skill-list">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+
+        </div>
+
+        <div class="skill-box purple-blue">
+
+          <div class="skill-number">04</div>
+          <div class="skill-icon">◈</div>
+
+          <h3 data-i18n="skills.frameworks">
+            Frameworks
+          </h3>
+
+          <div class="skill-list">
+            <span>Symfony</span>
+            <span>JavaFX</span>
+            <span>React</span>
+            <span>Angular</span>
+          </div>
+
+        </div>
+
+        <div class="skill-box soft-pink">
+
+          <div class="skill-number">05</div>
+          <div class="skill-icon">♡</div>
+
+          <h3 data-i18n="skills.tools">
+            Tools
+          </h3>
+
+          <div class="skill-list">
+            <span>Git</span>
+            <span>Jupyter</span>
+            <span>Power BI</span>
+            <span>Databricks</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+
+    <section id="education" class="section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          05 /
+          <span data-i18n="sections.education">
+            EDUCATION
+          </span>
+        </p>
+
+        <h2 data-i18n="education.title">
+          Learning log.
+        </h2>
+
+      </div>
+
+      <div class="education-grid">
+
+        <div class="education-card lavender">
+
+          <span>
+            2024 —
+            <span data-i18n="education.present">
+              PRESENT
+            </span>
+          </span>
+
+          <h3>
+            ESPRIM / Monastir
+          </h3>
+
+          <p data-i18n="education.esprim">
+            Engineering Degree in Computer Science —
+            Data Science & Artificial Intelligence.
+          </p>
+
+        </div>
+
+        <div class="education-card blue">
+
+          <span>
+            2021 — 2024
+          </span>
+
+          <h3>
+            IPEIM
+          </h3>
+
+          <p data-i18n="education.ipeim">
+            Preparatory Institute for Engineering Studies
+            of Monastir.
+          </p>
+
+        </div>
+
+        <div class="education-card sky">
+
+          <span data-i18n="education.certification">
+            CERTIFICATION
+          </span>
+
+          <h3>
+            NVIDIA Deep Learning Institute
+          </h3>
+
+          <p data-i18n="education.deepLearning">
+            Deep Learning Fundamentals.
+          </p>
+
+        </div>
+
+        <div class="education-card purple-blue">
+
+          <span data-i18n="education.languages">
+            LANGUAGES
+          </span>
+
+          <p>
+            <b data-i18n="education.arabic">
+              Arabic
+            </b>
+            —
+            <span data-i18n="education.native">
+              Native
+            </span>
+          </p>
+
+          <p>
+            <b data-i18n="education.english">
+              English
+            </b>
+            — C1
+          </p>
+
+          <p>
+            <b data-i18n="education.french">
+              French
+            </b>
+            — B2
+          </p>
+
+          <p>
+            <b data-i18n="education.spanish">
+              Spanish
+            </b>
+            —
+            <span data-i18n="education.basic">
+              Basic
+            </span>
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="section contact">
+
+      <div class="retro-window contact-window">
+
+        <div class="window-header purple-header">
+
+          <div class="window-controls">
+            <button>_</button>
+            <button>□</button>
+            <button>×</button>
+          </div>
+
+          <span>new_message.msg</span>
+
+        </div>
+
+        <div class="contact-content">
+
+          <p class="eyebrow">
+            06 /
+            <span data-i18n="sections.contact">
+              CONTACT
+            </span>
+          </p>
+
+          <h2 data-i18n="contact.title">
+            Let's talk.
+          </h2>
+
+          <p data-i18n="contact.description">
+            Open to conversations around data science, AI,
+            software development and research opportunities.
+          </p>
+
+          <div class="contact-links">
+
+            <a href="mailto:AYA.TLIJANI@esprim.tn">
+
+              <span data-i18n="contact.email">
+                EMAIL
+              </span>
+
+              AYA.TLIJANI@esprim.tn
+
+            </a>
+
+            <a href="tel:+21627392119">
+
+              <span data-i18n="contact.phone">
+                PHONE
+              </span>
+
+              +216 27 392 119
+
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/aya-tlijani-19489a317/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <span data-i18n="contact.linkedin">
+                LINKEDIN
+              </span>
+
+              <span data-i18n="contact.visit">
+                visit profile ↗
+              </span>
+
+            </a>
+
+            <a
+              href="https://github.com/AyaTlijani"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <span data-i18n="contact.github">
+                GITHUB
+              </span>
+
+              <span data-i18n="contact.visit">
+                visit profile ↗
+              </span>
+
+            </a>
+
+          </div>
+
+          <div class="cv-buttons">
+
+            <a
+              href="assets/Aya_Tlijani_CV.pdf"
+              class="button primary"
+              download
+              data-i18n="contact.englishCV"
+            >
+              English CV ↓
+            </a>
+
+            <a
+              href="assets/RESUME-fr.pdf"
+              class="button secondary"
+              download
+              data-i18n="contact.frenchCV"
+            >
+              CV français ↓
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= MINI GAME ================= -->
+
+    <section class="arcade">
+
+      <div class="arcade-window">
+
+        <div class="arcade-header">
+
+          <div class="window-controls">
+            <button>_</button>
+            <button>□</button>
+            <button>×</button>
+          </div>
+
+          <span>AYA'S LITTLE ARCADE.exe</span>
+
+        </div>
+
+        <div class="arcade-intro">
+
+          <div>
+
+            <p
+              class="eyebrow"
+              data-i18n="game.bonus"
+            >
+              BONUS AREA
+            </p>
+
+            <h2 data-i18n="game.title">
+              You've reached<br>
+              the end of the internet.
+            </h2>
+
+            <p data-i18n="game.description">
+              So... here's a tiny game instead.
+            </p>
+
+          </div>
+
+          <div class="hearts">
+            ♥ ♥ ♥
+          </div>
+
+        </div>
+
+        <div class="game-wrapper">
+
+          <canvas
+            id="game"
+            width="720"
+            height="320"
+            aria-label="Pixel bunny mini game"
+            data-i18n-aria="game.pixelBunny"
+          ></canvas>
+
+          <div
+            class="game-message"
+            id="game-message"
+          >
+
+            <div class="game-title">
+              ✦ PIXEL BUNNY ✦
+            </div>
+
+            <p data-i18n="game.instructions">
+              Collect the stars.<br>
+              Don't fall.
+            </p>
+
+            <button
+              id="start-game"
+              data-i18n="game.start"
+            >
+              START GAME
+            </button>
+
+            <small data-i18n="game.controls">
+              ← → / A D to move · SPACE to jump
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="arcade-footer">
+
+          <span id="game-score">
+            SCORE 0000
+          </span>
+
+          <span>
+            ✦ ✧ ✦ ✧ ✦
+          </span>
+
+          <span data-i18n="game.pressSpace">
+            PRESS SPACE
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= CV CHOOSER ================= -->
+
+  <div
+    id="cv-choice"
+    aria-hidden="true"
+  >
+
+    <div
+      id="cv-choice-window"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cv-choice-title"
+    >
+
+      <div class="cv-choice-header">
+
+        <span>
+          choose_cv.exe
+        </span>
+
+        <button
+          type="button"
+          id="cv-choice-close"
+          aria-label="Close CV chooser"
+          data-i18n-aria="cv.close"
+        >
+          ×
+        </button>
+
+      </div>
+
+      <div class="cv-choice-body">
+
+        <p
+          class="eyebrow"
+          data-i18n="cv.label"
+        >
+          CV / RESUME
+        </p>
+
+        <h3
+          id="cv-choice-title"
+          data-i18n="cv.title"
+        >
+          Which CV would you like?
+        </h3>
+
+        <p data-i18n="cv.description">
+          Choose the language you want to download.
+        </p>
+
+        <div class="cv-choice-options">
+
+          <a
+            href="assets/Aya_Tlijani_CV.pdf"
+            class="button primary"
+            download
+            data-i18n="contact.englishCV"
+          >
+            English CV ↓
+          </a>
+
+          <a
+            href="assets/RESUME-fr.pdf"
+            class="button secondary"
+            download
+            data-i18n="contact.frenchCV"
+          >
+            CV français ↓
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <footer>
+
+    <span>
+      ♡ AYA_TLIJANI.EXE
+    </span>
+
+    <span data-i18n="footer.built">
+      BUILT WITH HTML / CSS / JS
+    </span>
+
+    <span>
+      © 2026
+    </span>
+
+  </footer>
+
+  <div id="toast"></div>
+
+
+  <script src="js/main.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/language.js"></script>
+
+</body>
+</html>

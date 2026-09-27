@@ -1,0 +1,412 @@
+:root {
+  --bg: #f5f4ff;
+  --white: #ffffff;
+
+  --ink: #17152a;
+  --muted: #69677c;
+
+  --purple: #dcd3ff;
+  --purple-dark: #aaa0e8;
+
+  --blue: #c9ddff;
+  --blue-dark: #8eb5ed;
+
+  --sky: #dff1ff;
+
+  --pink: #ffd8e9;
+  --pink-dark: #ee9ec5;
+
+  --hot: #d94d9f;
+
+  --display: "Space Grotesk", sans-serif;
+  --mono: "DM Mono", monospace;
+  --body: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(
+      rgba(23, 21, 42, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(23, 21, 42, 0.045) 1px,
+      transparent 1px
+    ),
+    var(--bg);
+  background-size: 28px 28px;
+  font-family: var(--body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.035;
+  background: repeating-linear-gradient(
+    to bottom,
+    #000 0,
+    #000 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  line-height: 1.05;
+}
+
+p {
+  max-width: 65ch;
+}
+
+.section {
+  position: relative;
+  padding: 110px max(25px, calc((100vw - 1150px) / 2));
+  border-bottom: 2px solid var(--ink);
+}
+
+
+/* ================= NAV ================= */
+
+.taskbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 64px;
+  border-bottom: 2px solid var(--ink);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+}
+
+.taskbar-inner {
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  padding: 0 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  font: 500 13px var(--mono);
+  white-space: nowrap;
+}
+
+.logo-icon {
+  display: inline-flex;
+  width: 19px;
+  height: 19px;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 6px;
+
+  background: var(--purple);
+  border: 1.5px solid var(--ink);
+}
+
+nav {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+
+nav a {
+  padding: 7px 10px;
+  border: 1px solid transparent;
+  font: 10px var(--mono);
+}
+
+nav a:hover {
+  background: var(--blue);
+  border-color: var(--ink);
+}
+
+.nav-toggle {
+  display: none;
+  margin-left: auto;
+  background: none;
+  border: 0;
+  font-size: 22px;
+}
+
+
+/* ================= WINDOWS ================= */
+
+.retro-window {
+  background: white;
+  border: 2px solid var(--ink);
+  box-shadow: 8px 8px var(--ink);
+}
+
+.hero-window {
+  transform: rotate(1.5deg);
+  animation: windowFloat 5s ease-in-out infinite;
+}
+
+@keyframes windowFloat {
+  50% {
+    transform: rotate(0deg) translateY(-8px);
+  }
+}
+
+.window-header {
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 11px;
+
+  border-bottom: 2px solid var(--ink);
+
+  font: 10px var(--mono);
+}
+
+.blue-header {
+  background: var(--blue);
+}
+
+.purple-header {
+  background: var(--purple);
+}
+
+.window-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.window-controls button {
+  width: 12px;
+  height: 12px;
+
+  padding: 0;
+
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+
+  background: white;
+
+  font-size: 7px;
+  line-height: 8px;
+}
+
+.window-controls button:first-child {
+  background: var(--pink);
+}
+
+.window-controls button:nth-child(2) {
+  background: var(--sky);
+}
+
+.window-controls button:last-child {
+  background: var(--purple-dark);
+}
+
+.window-body {
+  padding: 25px;
+}
+
+
+/* ================= TERMINAL ================= */
+
+.terminal {
+  min-height: 370px;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(201, 221, 255, 0.8),
+      transparent 35%
+    ),
+    white;
+
+  font: 11px/1.8 var(--mono);
+}
+
+.terminal p {
+  margin: 12px 0;
+}
+
+.terminal-top {
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 12px;
+
+  border-bottom: 1px dashed var(--ink);
+
+  color: #7164a8;
+}
+
+.terminal b {
+  color: #765fbc;
+}
+
+.terminal-box {
+  padding: 13px;
+
+  border: 1px solid var(--ink);
+
+  background: var(--sky);
+}
+
+.terminal-value {
+  padding-left: 12px;
+  color: var(--muted);
+}
+
+.terminal-bottom {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 35px;
+  padding-top: 10px;
+
+  border-top: 1px dashed var(--ink);
+
+  font-size: 9px;
+}
+
+.terminal-bottom strong {
+  color: #4d9e77;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.button {
+  display: inline-block;
+
+  padding: 11px 18px;
+
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px var(--ink);
+
+  font: 10px var(--mono);
+
+  transition: 0.15s;
+}
+
+.button:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px var(--ink);
+}
+
+.primary {
+  background: #9c8ae6;
+  color: white;
+}
+
+.secondary {
+  background: white;
+}
+
+
+/* ================= TOAST ================= */
+
+#toast {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+
+  z-index: 500;
+
+  padding: 10px 14px;
+
+  background: var(--ink);
+  color: white;
+
+  font: 9px var(--mono);
+
+  opacity: 0;
+  transform: translateY(10px);
+
+  pointer-events: none;
+
+  transition: 0.2s;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ================= LANGUAGE SWITCH ================= */
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 14px;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+}
+
+.language-switch span {
+  opacity: 0.45;
+}
+
+.language-button {
+  border: none;
+  background: transparent;
+  padding: 3px 2px;
+  font: inherit;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  opacity: 0.45;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.language-button:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.language-button.active {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 768px) {
+  .language-switch {
+    margin-left: auto;
+    margin-right: 8px;
+  }
+}

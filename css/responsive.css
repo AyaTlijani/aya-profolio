@@ -1,0 +1,115 @@
+/* ================= MOBILE ================= */
+
+@media (max-width: 850px) {
+
+  .hero-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .hero-window {
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .project-card,
+  .artisan-project {
+    grid-template-columns: 1fr;
+  }
+
+  .project-visual,
+  .blue-project .project-visual {
+    min-height: 300px;
+
+    order: initial;
+
+    border: 0;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .project-content,
+  .blue-project .project-content {
+    order: initial;
+  }
+
+  .project-gallery {
+    border-left: 0;
+    border-top: 2px solid var(--ink);
+  }
+
+  .skills-grid,
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.open {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px 25px;
+
+    background: white;
+
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+
+
+@media (max-width: 550px) {
+
+  .section {
+    padding: 75px 20px;
+  }
+
+  .hero h1 {
+    font-size: 4.2rem;
+  }
+
+  .about-grid-small {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-content {
+    padding: 30px 22px;
+  }
+
+  .contact-links {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-links a:nth-child(odd) {
+    margin-right: 0;
+  }
+
+  .arcade-intro {
+    padding: 25px 20px 15px;
+  }
+
+  .game-wrapper {
+    margin: 0 12px;
+  }
+
+  .arcade-footer {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
