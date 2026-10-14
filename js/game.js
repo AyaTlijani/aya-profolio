@@ -1616,6 +1616,25 @@ document.addEventListener(
   "keydown",
   event => {
 
+    /*
+      Only steal keys while the game is actually being played,
+      and never while the visitor is typing in a field.
+      Otherwise Space and the arrow keys can't scroll the page.
+    */
+
+    const target = event.target;
+
+    if (
+      !gameRunning ||
+      (target &&
+        (target.tagName === "INPUT" ||
+         target.tagName === "TEXTAREA" ||
+         target.isContentEditable))
+    ) {
+      return;
+    }
+
+
     if (
       event.key ===
       "ArrowLeft"

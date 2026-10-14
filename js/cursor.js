@@ -248,11 +248,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function cursorLoop() {
 
-    currentX +=
-      (cursorX - currentX) * 0.22;
+    /*
+      The real cursor is hidden, so the pointer must sit
+      exactly under the mouse. Any easing here feels like lag.
+    */
 
-    currentY +=
-      (cursorY - currentY) * 0.22;
+    currentX = cursorX;
+    currentY = cursorY;
 
 
     /*

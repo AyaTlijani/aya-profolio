@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+  window.showToast = showToast;
+
+
   document
     .querySelectorAll("[data-placeholder]")
     .forEach(link => {
