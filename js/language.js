@@ -18,6 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.education": "education",
       "nav.contact": "contact",
       "nav.openMenu": "Open menu",
+      "nav.closeMenu": "Close menu",
+
+      /* INTERFACE */
+
+      "ui.backToTop": "Back to top",
+      "ui.theme": "Switch light / dark mode",
+      "ui.reopen": "reopen",
+      "ui.minimize": "Minimize window",
+      "ui.maximize": "Maximize window",
+      "ui.closeWindow": "Close window",
+      "terminal.hint": "type <b>help</b> + enter",
+      "terminal.inputLabel": "Terminal command",
+      "projects.openGallery": "Open screenshots",
 
       /* HERO */
 
@@ -366,6 +379,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "nav.openMenu":
         "Ouvrir le menu",
+      "nav.closeMenu": "Fermer le menu",
+
+      /* INTERFACE */
+
+      "ui.backToTop": "Retour en haut",
+      "ui.theme": "Basculer mode clair / sombre",
+      "ui.reopen": "rouvrir",
+      "ui.minimize": "Réduire la fenêtre",
+      "ui.maximize": "Agrandir la fenêtre",
+      "ui.closeWindow": "Fermer la fenêtre",
+      "terminal.hint": "tapez <b>help</b> + entrée",
+      "terminal.inputLabel": "Commande du terminal",
+      "projects.openGallery": "Voir les captures",
 
       /* HERO */
 
@@ -690,6 +716,9 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ======================= PAGE META ======================= */
   /* ========================================================= */
 
+  window.siteTranslations = translations;
+
+
   const pageMeta = {
 
     en: {
@@ -849,9 +878,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Save preference */
 
-    localStorage.setItem(
-      "site-language",
-      language
+    try {
+      localStorage.setItem(
+        "site-language",
+        language
+      );
+    } catch (error) {
+      /* Storage can be blocked; the switch still works. */
+    }
+
+
+    /* Let other scripts react (terminal, window labels…) */
+
+    document.dispatchEvent(
+      new CustomEvent("site:language", {
+        detail: { language }
+      })
     );
 
   }
@@ -881,8 +923,14 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ================= INITIAL LANGUAGE ===================== */
   /* ========================================================= */
 
-  const savedLanguage =
-    localStorage.getItem("site-language");
+  let savedLanguage = null;
+
+  try {
+    savedLanguage =
+      localStorage.getItem("site-language");
+  } catch (error) {
+    savedLanguage = null;
+  }
 
   const browserLanguage =
     navigator.language

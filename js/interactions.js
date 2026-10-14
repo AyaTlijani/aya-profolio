@@ -4,60 +4,9 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const toast = document.querySelector("#toast");
-
-  function showToast(message) {
-    if (!toast) return;
-
-    toast.textContent = message;
-    toast.classList.add("show");
-
-    clearTimeout(window.toastTimeout);
-
-    window.toastTimeout = window.setTimeout(() => {
-      toast.classList.remove("show");
-    }, 2200);
-  }
-
-
-  /* =======================================================
-     PLACEHOLDER LINKS
-  ======================================================== */
-
-  document.querySelectorAll("[data-placeholder]").forEach(link => {
-    link.addEventListener("click", event => {
-      event.preventDefault();
-
-      showToast(`${link.dataset.placeholder} link isn't configured yet.`);
-    });
-  });
-
-
-  /* =======================================================
-     PROJECT IMAGE FALLBACK
-  ======================================================== */
-
-  document.querySelectorAll("img").forEach(img => {
-
-    img.addEventListener("error", () => {
-
-      if (img.dataset.fallbackShown === "true") return;
-
-      img.dataset.fallbackShown = "true";
-      img.style.display = "none";
-
-      const fallback = document.createElement("div");
-
-      fallback.className = "image-fallback";
-      fallback.textContent = "image unavailable";
-
-      if (img.parentElement) {
-        img.parentElement.appendChild(fallback);
-      }
-
-    });
-
-  });
+  /*
+    Toast messages and broken-image fallbacks live in main.js.
+  */
 
 
   /* =======================================================

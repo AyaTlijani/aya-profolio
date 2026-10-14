@@ -1,0 +1,822 @@
+/* =========================================================
+   ENHANCEMENTS
+   Loaded last, so these rules refine the original styles.
+========================================================= */
+
+:root {
+  --surface: #ffffff;
+  --overlay: rgba(23, 21, 42, 0.5);
+  --accent-text: #6956b4;
+  --grid-line: rgba(23, 21, 42, 0.045);
+}
+
+
+/* =========================================================
+   NAV — active link, theme toggle, mobile menu
+========================================================= */
+
+nav a {
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+nav a.active {
+  background: var(--purple);
+  border-color: var(--ink);
+}
+
+.theme-toggle {
+  width: 30px;
+  height: 30px;
+  flex: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1.5px solid var(--ink);
+  box-shadow: 2px 2px var(--ink);
+  background: var(--surface);
+  color: var(--ink);
+
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.theme-toggle:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px var(--ink);
+}
+
+.theme-icon-sun,
+[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon-sun {
+  display: inline;
+}
+
+.nav-toggle {
+  color: var(--ink);
+  cursor: pointer;
+}
+
+@media (max-width: 850px) {
+
+  .taskbar-inner {
+    gap: 12px;
+  }
+
+  .nav-toggle {
+    margin-left: 0;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+  }
+
+  nav.open {
+    background: var(--surface);
+    animation: menuDrop 0.18s ease;
+  }
+
+  nav.open a {
+    font-size: 12px;
+    padding: 13px 10px;
+  }
+
+  nav.open a.active {
+    border-bottom-color: var(--ink);
+  }
+}
+
+@keyframes menuDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+
+/* =========================================================
+   SCROLL REVEALS
+   Uses the individual `translate` property so the original
+   hover `transform` lifts keep working.
+========================================================= */
+
+html.js-reveal .reveal {
+  opacity: 0;
+  translate: 0 26px;
+
+  transition:
+    opacity 0.6s ease var(--reveal-delay, 0ms),
+    translate 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0ms),
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+html.js-reveal .reveal.in-view {
+  opacity: 1;
+  translate: none;
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 400;
+
+  width: 44px;
+  height: 44px;
+
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px var(--ink);
+  background: var(--purple);
+  color: var(--ink);
+
+  font: 500 18px var(--mono);
+  cursor: pointer;
+
+  opacity: 0;
+  translate: 0 12px;
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    translate 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  translate: none;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px var(--ink);
+}
+
+/* Keep the toast clear of the back-to-top button. */
+#toast {
+  bottom: 82px;
+}
+
+
+/* =========================================================
+   WINDOW BUTTONS — minimize / maximize / close
+========================================================= */
+
+.window-controls button {
+  cursor: pointer;
+  color: var(--ink);
+  transition: transform 0.1s ease;
+}
+
+.window-controls button:hover {
+  transform: scale(1.25);
+}
+
+.window-header,
+.arcade-header {
+  user-select: none;
+}
+
+/* Minimized: only the title bar remains. */
+.retro-window.is-minimized > :not(.window-header),
+.arcade-window.is-minimized > :not(.arcade-header) {
+  display: none;
+}
+
+.retro-window.is-minimized,
+.arcade-window.is-minimized {
+  align-self: start;
+}
+
+.hero-window.is-minimized .window-header,
+.retro-window.is-minimized .window-header,
+.arcade-window.is-minimized .arcade-header {
+  border-bottom: 0;
+}
+
+/* Maximized: the window fills the screen. */
+body.window-maximized {
+  overflow: hidden;
+}
+
+body.window-maximized::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 880;
+  background: var(--overlay);
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.18s ease;
+}
+
+.retro-window.is-maximized,
+.arcade-window.is-maximized {
+  position: fixed !important;
+  inset: 80px max(16px, 4vw) 24px;
+  z-index: 890;
+
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+
+  overflow: auto;
+  transform: none !important;
+  rotate: none;
+  animation: windowPop 0.2s ease !important;
+}
+
+.retro-window.is-maximized .window-header,
+.arcade-window.is-maximized .arcade-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.photo-window.is-maximized .photo-area img {
+  width: auto;
+  max-width: 100%;
+  height: calc(100vh - 210px);
+  margin: 0 auto;
+  object-fit: contain;
+  aspect-ratio: auto;
+}
+
+.arcade-window.is-maximized .game-wrapper {
+  max-width: min(100%, calc((100vh - 330px) * 2.25));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Closing and reopening */
+.is-closing {
+  animation: windowClose 0.22s ease forwards !important;
+  pointer-events: none;
+}
+
+.is-closed {
+  display: none !important;
+}
+
+.is-reopening {
+  animation: windowPop 0.3s cubic-bezier(0.2, 1.4, 0.4, 1) !important;
+}
+
+.window-chip {
+  align-self: start;
+  justify-self: start;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin: 0 0 22px;
+  padding: 9px 14px;
+
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px var(--ink);
+  background: var(--purple);
+  color: var(--ink);
+
+  font: 10px var(--mono);
+  cursor: pointer;
+
+  animation: windowPop 0.25s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.window-chip:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px var(--ink);
+}
+
+.contact .window-chip,
+.arcade .window-chip {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes windowClose {
+  to {
+    opacity: 0;
+    transform: scale(0.6) translateY(30px);
+  }
+}
+
+@keyframes windowPop {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+
+/* =========================================================
+   LIVE TERMINAL
+========================================================= */
+
+.terminal-input {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+
+  margin: 14px 0 0;
+}
+
+.terminal-input label {
+  white-space: nowrap;
+}
+
+.terminal-input input {
+  flex: 1;
+  min-width: 70px;
+
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+
+  font: inherit;
+  caret-color: #765fbc;
+  outline: none;
+}
+
+.terminal-input:focus-within {
+  outline: 1px dashed var(--purple-dark);
+  outline-offset: 4px;
+}
+
+.terminal-hint {
+  width: 100%;
+  padding-left: 2px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.terminal-input.used .terminal-hint {
+  display: none;
+}
+
+.terminal-output {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.terminal-output p {
+  margin: 8px 0 2px;
+}
+
+.terminal-output .terminal-value b {
+  color: var(--accent-text);
+}
+
+.boot-hidden {
+  visibility: hidden;
+}
+
+.typing-caret::after {
+  content: "▋";
+  margin-left: 1px;
+  color: #765fbc;
+  animation: caretBlink 0.8s steps(1) infinite;
+}
+
+@keyframes caretBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* No float animation while someone is typing in it. */
+.hero-window:focus-within,
+.hero-window:hover {
+  animation-play-state: paused;
+}
+
+
+/* =========================================================
+   EXPERIENCE — timeline
+========================================================= */
+
+.experience-list {
+  position: relative;
+  padding-left: 48px;
+}
+
+.experience-list::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--ink) 0 6px,
+    transparent 6px 11px
+  );
+}
+
+.experience-card::before {
+  content: "";
+  position: absolute;
+  left: -42px;
+  top: 34px;
+
+  width: 14px;
+  height: 14px;
+
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px var(--ink);
+  background: var(--purple);
+}
+
+.experience-card.blue::before {
+  background: var(--blue);
+}
+
+.experience-card.sky::before {
+  background: var(--sky);
+}
+
+.experience-card ul {
+  margin-bottom: 0;
+}
+
+@media (max-width: 550px) {
+
+  .experience-list {
+    padding-left: 30px;
+  }
+
+  .experience-list::before {
+    left: 8px;
+  }
+
+  .experience-card::before {
+    left: -29px;
+    width: 12px;
+    height: 12px;
+  }
+}
+
+
+/* =========================================================
+   PROJECTS — thumbnails beside the text
+========================================================= */
+
+.project-card.has-thumb {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.project-thumb {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 34px 30px;
+
+  border: 0;
+  border-right: 2px solid var(--ink);
+
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    rgba(255, 255, 255, 0.45);
+  background-size: 18px 18px;
+
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.project-card.has-thumb:nth-of-type(even) .project-thumb {
+  order: 2;
+  border-right: 0;
+  border-left: 2px solid var(--ink);
+}
+
+.project-thumb-bar {
+  display: flex;
+  gap: 4px;
+
+  padding: 6px 8px;
+
+  border: 2px solid var(--ink);
+  border-bottom: 0;
+  background: var(--purple);
+}
+
+.project-thumb-bar i {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  background: var(--surface);
+}
+
+.project-thumb img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top left;
+
+  border: 2px solid var(--ink);
+  box-shadow: 6px 6px var(--ink);
+  background: var(--surface);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (hover: hover) {
+
+  .project-thumb:hover img {
+    transform: translate(-3px, -3px) rotate(-0.6deg);
+    box-shadow: 9px 9px var(--ink);
+  }
+}
+
+.project-thumb:focus-visible img {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px var(--ink);
+}
+
+.project-thumb:focus-visible {
+  outline: 3px dashed var(--purple-dark);
+  outline-offset: -8px;
+}
+
+.project-thumb-chip {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+
+  padding: 4px 8px;
+
+  border: 1.5px solid var(--ink);
+  background: var(--surface);
+
+  font: 9px var(--mono);
+}
+
+@media (max-width: 850px) {
+
+  .project-card.has-thumb {
+    grid-template-columns: 1fr;
+  }
+
+  .project-thumb,
+  .project-card.has-thumb:nth-of-type(even) .project-thumb {
+    order: 0;
+    padding: 22px 20px 26px;
+    border: 0;
+    border-bottom: 2px solid var(--ink);
+  }
+}
+
+
+/* =========================================================
+   CURSOR — keep the native cursor for text entry
+========================================================= */
+
+@media (pointer: fine) {
+
+  .terminal-input input {
+    cursor: text;
+  }
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #13111f;
+  --surface: #1f1c31;
+  --ink: #e8e3ff;
+  --muted: #aaa5c7;
+
+  --purple: #3b3368;
+  --purple-dark: #7a6bd6;
+  --blue: #263b66;
+  --blue-dark: #4f73b8;
+  --sky: #1c3448;
+  --pink: #4a2a40;
+  --pink-dark: #a35a83;
+
+  --overlay: rgba(5, 4, 12, 0.66);
+  --accent-text: #b8a9ff;
+  --grid-line: rgba(232, 227, 255, 0.05);
+}
+
+[data-theme="dark"] body {
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    var(--bg);
+  background-size: 28px 28px;
+}
+
+[data-theme="dark"] body::before {
+  opacity: 0.08;
+}
+
+[data-theme="dark"] .taskbar {
+  background: rgba(19, 17, 31, 0.88);
+}
+
+/* Plain white surfaces */
+[data-theme="dark"] .retro-window,
+[data-theme="dark"] .terminal,
+[data-theme="dark"] .secondary,
+[data-theme="dark"] .about-grid-small div,
+[data-theme="dark"] .speech-bubble,
+[data-theme="dark"] .project-number,
+[data-theme="dark"] .project-tools span,
+[data-theme="dark"] .tags span,
+[data-theme="dark"] .skill-list span,
+[data-theme="dark"] .view-photos-button,
+[data-theme="dark"] .company-logo,
+[data-theme="dark"] .contact-window,
+[data-theme="dark"] .arcade-window,
+[data-theme="dark"] .project-viewer-window,
+[data-theme="dark"] .viewer-close,
+[data-theme="dark"] .viewer-arrow,
+[data-theme="dark"] .viewer-counter,
+[data-theme="dark"] .viewer-image-frame,
+[data-theme="dark"] #cv-choice-window,
+[data-theme="dark"] #cv-choice-close,
+[data-theme="dark"] .game-message button,
+[data-theme="dark"] .game-controls button,
+[data-theme="dark"] footer {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .photo-window {
+  background: var(--purple);
+}
+
+[data-theme="dark"] .terminal {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(79, 115, 184, 0.35), transparent 35%),
+    var(--surface);
+}
+
+/* Logos are drawn for white backgrounds — keep them on white. */
+[data-theme="dark"] .company-logo {
+  background: #ffffff;
+}
+
+/* Pastel cards become deep tinted cards */
+[data-theme="dark"] .experience-card.lavender,
+[data-theme="dark"] .lavender-project,
+[data-theme="dark"] .artisan-project,
+[data-theme="dark"] .skill-box.lavender,
+[data-theme="dark"] .education-card.lavender {
+  background: #241f3d;
+}
+
+[data-theme="dark"] .experience-card.blue,
+[data-theme="dark"] .blue-project,
+[data-theme="dark"] .skill-box.blue,
+[data-theme="dark"] .education-card.blue {
+  background: #1b2541;
+}
+
+[data-theme="dark"] .experience-card.lavender-blue,
+[data-theme="dark"] .skill-box.purple-blue,
+[data-theme="dark"] .education-card.purple-blue {
+  background: #21213f;
+}
+
+[data-theme="dark"] .experience-card.sky,
+[data-theme="dark"] .skill-box.sky,
+[data-theme="dark"] .education-card.sky {
+  background: #182a3a;
+}
+
+[data-theme="dark"] .skill-box.soft-pink {
+  background: #2f1f2d;
+}
+
+[data-theme="dark"] .project-thumb {
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    rgba(0, 0, 0, 0.18);
+  background-size: 18px 18px;
+}
+
+/* Accent text that was tuned for light backgrounds */
+[data-theme="dark"] .eyebrow,
+[data-theme="dark"] .date,
+[data-theme="dark"] .card-decoration,
+[data-theme="dark"] .project-type,
+[data-theme="dark"] .tools-label,
+[data-theme="dark"] .skill-number,
+[data-theme="dark"] .skill-icon,
+[data-theme="dark"] .terminal b,
+[data-theme="dark"] .terminal-top,
+[data-theme="dark"] .contact-links span,
+[data-theme="dark"] .view-photos-button span,
+[data-theme="dark"] .view-photos-button b,
+[data-theme="dark"] .hearts,
+[data-theme="dark"] .scroll-hint {
+  color: var(--accent-text);
+}
+
+[data-theme="dark"] .hero h1 span {
+  color: #a493ff;
+  text-shadow: 4px 4px 0 #050410;
+}
+
+[data-theme="dark"] .terminal-bottom strong {
+  color: #7fd9a8;
+}
+
+[data-theme="dark"] .primary {
+  background: #7a66e0;
+}
+
+[data-theme="dark"] .project-viewer,
+[data-theme="dark"] #cv-choice {
+  background: var(--overlay);
+}
+
+[data-theme="dark"] .game-message {
+  background: rgba(31, 28, 49, 0.94);
+}
+
+[data-theme="dark"] .arcade {
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    #1a1730;
+  background-size: 28px 28px;
+}
+
+[data-theme="dark"] .cursor-pointer {
+  background: #ffffff;
+}
+
+[data-theme="dark"] .image-fallback {
+  background: var(--surface) !important;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .hero-window {
+    animation: none;
+  }
+}

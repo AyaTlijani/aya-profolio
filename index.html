@@ -22,6 +22,22 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/cursor.css">
+  <link rel="stylesheet" href="css/enhancements.css">
+
+  <script>
+    /* Apply the saved theme before the page paints (no flash). */
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem("site-theme"); } catch (e) {}
+      if (theme !== "dark" && theme !== "light") {
+        theme = window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
 </head>
 
 <body>
@@ -66,8 +82,23 @@
       </div>
 
       <button
+        type="button"
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Switch light / dark mode"
+        data-i18n-aria="ui.theme"
+        aria-pressed="false"
+      >
+        <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+        <span class="theme-icon theme-icon-sun" aria-hidden="true">☼</span>
+      </button>
+
+      <button
+        type="button"
         class="nav-toggle"
         aria-label="Open menu"
+        aria-controls="main-nav"
+        aria-expanded="false"
         data-i18n-aria="nav.openMenu"
       >☰</button>
 
@@ -222,6 +253,34 @@
             >
               Monastir, Tunisia
             </div>
+
+            <form class="terminal-input" id="terminal-form" autocomplete="off">
+
+              <label for="terminal-command">
+                <b>guest@aya</b>:~$
+              </label>
+
+              <input
+                type="text"
+                id="terminal-command"
+                spellcheck="false"
+                autocapitalize="off"
+                aria-label="Terminal command"
+                data-i18n-aria="terminal.inputLabel"
+              >
+
+              <span
+                class="terminal-hint"
+                data-i18n="terminal.hint"
+              >type <b>help</b> + enter</span>
+
+            </form>
+
+            <div
+              class="terminal-output"
+              id="terminal-output"
+              aria-live="polite"
+            ></div>
 
             <div class="terminal-bottom">
 
@@ -646,7 +705,25 @@
 
       <!-- ARTISANCONNECT -->
 
-      <article class="project-card artisan-project">
+      <article class="project-card artisan-project has-thumb">
+
+        <button
+          type="button"
+          class="project-thumb"
+          data-gallery="artisan"
+          aria-label="ArtisanConnect — open screenshots"
+        >
+          <span class="project-thumb-bar" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </span>
+          <img
+            src="assets/artisanconnect-1.png"
+            alt="ArtisanConnect screenshot"
+            loading="lazy"
+            decoding="async"
+          >
+          <span class="project-thumb-chip" aria-hidden="true">03 ↗</span>
+        </button>
 
         <div class="project-content">
 
@@ -726,7 +803,25 @@
 
       <!-- BRAIN TUMOR -->
 
-      <article class="project-card blue-project">
+      <article class="project-card blue-project has-thumb">
+
+        <button
+          type="button"
+          class="project-thumb"
+          data-gallery="brain"
+          aria-label="Brain Tumor Detection — open screenshots"
+        >
+          <span class="project-thumb-bar" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </span>
+          <img
+            src="assets/brain-tumor.png"
+            alt="Brain Tumor Detection screenshot"
+            loading="lazy"
+            decoding="async"
+          >
+          <span class="project-thumb-chip" aria-hidden="true">01 ↗</span>
+        </button>
 
         <div class="project-content">
 
@@ -811,7 +906,25 @@
 
       <!-- FRAUDEX AI -->
 
-      <article class="project-card lavender-project">
+      <article class="project-card lavender-project has-thumb">
+
+        <button
+          type="button"
+          class="project-thumb"
+          data-gallery="fraudexia"
+          aria-label="Fraudex AI — open screenshots"
+        >
+          <span class="project-thumb-bar" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </span>
+          <img
+            src="assets/fraudexia.png"
+            alt="Fraudex AI screenshot"
+            loading="lazy"
+            decoding="async"
+          >
+          <span class="project-thumb-chip" aria-hidden="true">01 ↗</span>
+        </button>
 
         <div class="project-content">
 
@@ -1346,8 +1459,6 @@
 
     <!-- ================= MINI GAME ================= -->
 
-    <!-- ================= MINI GAME ================= -->
-
 <section class="arcade">
 
   <div class="arcade-window">
@@ -1582,11 +1693,26 @@
 
   <div id="toast"></div>
 
+  <button
+    type="button"
+    class="back-to-top"
+    id="back-to-top"
+    aria-label="Back to top"
+    data-i18n-aria="ui.backToTop"
+  >↑</button>
+
+  <div class="y2k-cursor" aria-hidden="true">
+    <span class="cursor-pointer"></span>
+    <span class="cursor-sparkle">✦</span>
+  </div>
+
 
   <script src="js/main.js"></script>
   <script src="js/interactions.js"></script>
   <script src="js/game.js"></script>
+  <script src="js/enhancements.js"></script>
   <script src="js/language.js"></script>
+  <script src="js/cursor.js"></script>
 
 </body>
 </html>
