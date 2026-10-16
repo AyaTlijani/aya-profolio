@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     querypilot: {
       name: "QUERYPILOT",
-      title: "querypilot.exe",
+      title: "QueryPilot",
 
       images: [
         {
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     artisan: {
       name: "ARTISANCONNECT",
-      title: "artisanconnect.exe",
+      title: "ArtisanConnect",
 
       images: [
         {
@@ -675,4 +675,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
+});
+
+/* Bonus game: hidden until the visitor asks for it from the footer. */
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector("#arcade-toggle");
+  const arcade = document.querySelector("#arcade");
+
+  if (!toggle || !arcade) {
+    return;
+  }
+
+  toggle.addEventListener("click", () => {
+    arcade.hidden = false;
+    arcade.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 });

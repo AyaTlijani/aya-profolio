@@ -1,0 +1,344 @@
+/* =========================================================
+   POLISH — calmer, more professional layer on top of the
+   original styles. Flat rounded cards, quiet tags, readable
+   buttons; the retro window frame stays on the terminal and
+   project screenshots only.
+========================================================= */
+
+:root {
+  --bg: #faf9ff;
+  --card: #ffffff;
+  --line: rgba(23, 21, 42, 0.12);
+  --line-strong: rgba(23, 21, 42, 0.22);
+  --accent: #7360d6;
+  --accent-soft: #f1eeff;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --lift: 0 14px 34px -18px rgba(40, 30, 90, 0.35);
+}
+
+[data-theme="dark"] {
+  --bg: #13111f;
+  --card: #1c1a2c;
+  --line: rgba(232, 227, 255, 0.12);
+  --line-strong: rgba(232, 227, 255, 0.22);
+  --accent: #a493ff;
+  --accent-soft: rgba(164, 147, 255, 0.12);
+  --lift: 0 14px 34px -18px rgba(0, 0, 0, 0.7);
+}
+
+
+/* ---------- page background: plain, grid only in the hero ---------- */
+
+body,
+[data-theme="dark"] body {
+  background: var(--bg);
+}
+
+body::before {
+  display: none;
+}
+
+.hero {
+  background:
+    linear-gradient(to bottom, transparent 40%, var(--bg)),
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px),
+    var(--bg);
+  background-size: auto, 28px 28px, 28px 28px, auto;
+}
+
+.section {
+  border-bottom: 1px solid var(--line);
+}
+
+.taskbar {
+  border-bottom: 1px solid var(--line);
+}
+
+[data-theme="dark"] .taskbar {
+  background: rgba(19, 17, 31, 0.85);
+}
+
+
+/* ---------- hero ---------- */
+
+.hero h1 span,
+[data-theme="dark"] .hero h1 span {
+  color: var(--accent);
+  text-shadow: none;
+}
+
+.hero-window {
+  transform: none;
+  animation: none;
+}
+
+.online-badge {
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+
+/* ---------- cards: flat and rounded, lift on hover ---------- */
+
+.retro-window,
+.experience-card,
+.project-card,
+.skill-box,
+.education-card,
+.about-grid-small div,
+.contact-window {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.experience-card,
+.project-card,
+.skill-box,
+.education-card,
+.about-grid-small div,
+.experience-card.lavender,
+.experience-card.blue,
+.experience-card.lavender-blue,
+.experience-card.sky,
+.lavender-project,
+.blue-project,
+.artisan-project,
+.skill-box.lavender,
+.skill-box.blue,
+.skill-box.purple-blue,
+.skill-box.sky,
+.skill-box.soft-pink,
+.education-card.lavender,
+.education-card.blue,
+.education-card.purple-blue,
+.education-card.sky,
+[data-theme="dark"] .experience-card.lavender,
+[data-theme="dark"] .experience-card.blue,
+[data-theme="dark"] .experience-card.lavender-blue,
+[data-theme="dark"] .experience-card.sky,
+[data-theme="dark"] .lavender-project,
+[data-theme="dark"] .blue-project,
+[data-theme="dark"] .artisan-project,
+[data-theme="dark"] .skill-box.lavender,
+[data-theme="dark"] .skill-box.blue,
+[data-theme="dark"] .skill-box.purple-blue,
+[data-theme="dark"] .skill-box.sky,
+[data-theme="dark"] .skill-box.soft-pink,
+[data-theme="dark"] .education-card.lavender,
+[data-theme="dark"] .education-card.blue,
+[data-theme="dark"] .education-card.purple-blue,
+[data-theme="dark"] .education-card.sky,
+[data-theme="dark"] .about-grid-small div {
+  background: var(--card);
+}
+
+.experience-card,
+.project-card,
+.skill-box {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.experience-card:hover,
+.project-card:hover,
+.skill-box:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--lift);
+  border-color: var(--accent);
+}
+
+.experience-card::before {
+  display: none;
+}
+
+.project-thumb {
+  border-color: var(--line) !important;
+}
+
+.project-thumb img {
+  border-radius: 10px;
+  box-shadow: var(--lift);
+}
+
+.company-logo {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+}
+
+
+/* ---------- windows: only the terminal keeps its title bar ---------- */
+
+.retro-window .window-header {
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.photo-window .window-header,
+.contact-window .window-header {
+  display: none;
+}
+
+.photo-window,
+[data-theme="dark"] .photo-window {
+  transform: none;
+  background: var(--card);
+}
+
+.photo-area img {
+  border: 0;
+  border-radius: 12px;
+}
+
+.speech-bubble {
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+
+/* ---------- buttons: readable, rounded ---------- */
+
+.button,
+.view-photos-button {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+  font: 500 14px var(--body);
+  letter-spacing: 0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.button:hover,
+.view-photos-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--lift);
+}
+
+.button:active,
+.view-photos-button:active {
+  transform: none;
+  box-shadow: none;
+}
+
+.primary,
+[data-theme="dark"] .primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.secondary,
+.view-photos-button,
+[data-theme="dark"] .secondary,
+[data-theme="dark"] .view-photos-button {
+  background: var(--card);
+}
+
+.view-photos-button {
+  padding: 9px 14px;
+}
+
+.view-photos-button em {
+  font-style: normal;
+}
+
+.theme-toggle,
+.back-to-top {
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+
+/* ---------- tags: quiet pills ---------- */
+
+.project-tools span,
+.tags span,
+.skill-list span,
+.project-number {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: none;
+  background: var(--accent-soft);
+}
+
+.project-tools span:hover,
+.skill-list span:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--accent);
+}
+
+[data-theme="dark"] .project-tools span,
+[data-theme="dark"] .tags span,
+[data-theme="dark"] .skill-list span,
+[data-theme="dark"] .project-number {
+  background: var(--accent-soft);
+}
+
+
+/* ---------- nav ---------- */
+
+.nav-links a {
+  border-radius: 999px;
+}
+
+
+/* ---------- footer and the optional game ---------- */
+
+.arcade[hidden] {
+  display: none;
+}
+
+.arcade-toggle {
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  cursor: pointer;
+}
+
+.arcade-toggle:hover {
+  text-decoration: underline;
+}
+
+.arcade-window,
+.game-wrapper {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+nav a.active {
+  background: var(--accent-soft);
+  border-color: transparent;
+  color: var(--accent);
+}
+
+.window-status {
+  border-top: 1px solid var(--line);
+}
+
+.contact-links,
+.contact-links a {
+  border-color: var(--line-strong);
+}
+
+.project-thumb-bar {
+  border-width: 1px;
+  border-radius: 10px 10px 0 0;
+}
+
+.project-thumb-bar + img {
+  border-radius: 0 0 10px 10px;
+}
+
+.project-thumb-chip {
+  border-width: 1px;
+  border-radius: 999px;
+}

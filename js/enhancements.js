@@ -585,6 +585,7 @@ document.addEventListener("DOMContentLoaded", () => {
       printLine(command, text.goto("arcade"));
       const arcade = document.querySelector(".arcade");
       if (arcade) {
+        arcade.hidden = false;
         window.setTimeout(() => {
           arcade.scrollIntoView({
             behavior: reduceMotion ? "auto" : "smooth"
