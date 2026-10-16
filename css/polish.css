@@ -290,22 +290,6 @@ body::before {
 
 /* ---------- footer and the optional game ---------- */
 
-.arcade[hidden] {
-  display: none;
-}
-
-.arcade-toggle {
-  border: 0;
-  background: none;
-  color: var(--accent);
-  font: inherit;
-  cursor: pointer;
-}
-
-.arcade-toggle:hover {
-  text-decoration: underline;
-}
-
 .arcade-window,
 .game-wrapper {
   border: 1px solid var(--line-strong);
