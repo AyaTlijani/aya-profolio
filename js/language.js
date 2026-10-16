@@ -132,22 +132,22 @@ document.addEventListener("DOMContentLoaded", () => {
         "Junior Research Assistant · Remote",
 
       "experience.uel.description":
-        "Working on applying artificial intelligence to project management and resource-constrained scheduling optimization.",
+        "<b>GNN-Based Reinforcement Learning for Project Scheduling</b>",
 
       "experience.uel.bullet1":
-        "Developing a solution for the Resource-Constrained Project Scheduling Problem (RCPSP).",
+        "Developed graph neural network policies using PPO and self-labeling to solve the Resource-Constrained Project Scheduling Problem (RCPSP), benchmarking against classical scheduling heuristics.",
 
       "experience.uel.bullet2":
-        "Implementing a Graph Isomorphism Network (GIN) with Proximal Policy Optimization (PPO) using PyTorch and PyTorch Geometric.",
+        "Investigated LFT-anchored learning and conducted reproducible experiments across PSPLIB instances with up to 120 activities, statistical testing, and comparative evaluation.",
 
       "experience.amsys.role":
-        "Artificial Intelligence Intern",
+        "AI Engineering Intern",
 
       "experience.amsys.bullet1":
-        "Contributed to the design and development of AI pipelines as part of a confidential project.",
+        "Actively contributing to AI research and development, working on advanced computer vision and deep learning solutions.",
 
       "experience.amsys.bullet2":
-        "Designed and evaluated AI workflows for intelligent analysis solutions.",
+        "Supporting the development, experimentation, and evaluation of AI models and intelligent systems.",
 
       "experience.esprim.role":
         "Data Science Intern",
@@ -245,10 +245,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "Basic",
 
       "date.ueljul":
-        "JUL 2026 — SEP 2026",
+        "JUL 2026 — NOV 2026",
 
       "date.amsys":
-        "AUG 2026 — SEP 2026",
+        "AUG 2026 — DEC 2026",
 
       "date.esprim":
         "JUL 2026 — AUG 2026",
@@ -261,6 +261,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "cv.window":
         "Choose a CV",
+
+      "experience.uel.bullet3":
+        "Co-authored a research paper examining fair benchmarking and learned scheduling policies, currently under review.",
+
+      "projects.more":
+        "More projects, experiments and code on my GitHub.",
+
+      "skills.languages":
+        "Languages",
+
+      "skills.ml":
+        "Machine Learning &amp; AI",
+
+      "skills.llm":
+        "LLMs &amp; Agents",
+
+      "skills.optim":
+        "Optimization",
+
+      "skills.webdev":
+        "Web &amp; Backend",
+
+      "skills.data":
+        "Data &amp; Tools",
 
       /* VIEWER */
 
@@ -280,21 +304,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "skills.title":
         "My little toolbox.",
-
-      "skills.programming":
-        "Programming",
-
-      "skills.dataAI":
-        "Data & AI",
-
-      "skills.web":
-        "Web",
-
-      "skills.frameworks":
-        "Frameworks",
-
-      "skills.tools":
-        "Tools",
 
       /* EDUCATION */
 
@@ -542,22 +551,22 @@ document.addEventListener("DOMContentLoaded", () => {
         "Assistante de recherche junior · Télétravail",
 
       "experience.uel.description":
-        "Travail sur l’application de l’intelligence artificielle à la gestion de projet et à l’optimisation de la planification des ressources.",
+        "<b>Apprentissage par renforcement à base de GNN pour l’ordonnancement de projets</b>",
 
       "experience.uel.bullet1":
-        "Implémentation d’une solution pour le Resource-Constrained Project Scheduling Problem (RCPSP).",
+        "Développement de politiques à base de réseaux de neurones sur graphes, entraînées par PPO et auto-étiquetage, pour résoudre le problème d’ordonnancement de projet à ressources limitées (RCPSP), comparées aux heuristiques d’ordonnancement classiques.",
 
       "experience.uel.bullet2":
-        "Mise en œuvre d’un Graph Isomorphism Network (GIN) avec Proximal Policy Optimization (PPO) en utilisant PyTorch et PyTorch Geometric.",
+        "Étude de l’apprentissage ancré sur les LFT et expériences reproductibles sur des instances PSPLIB allant jusqu’à 120 activités, avec tests statistiques et évaluation comparative.",
 
       "experience.amsys.role":
-        "Stagiaire en Intelligence Artificielle",
+        "Stagiaire ingénieure IA",
 
       "experience.amsys.bullet1":
-        "Contribution à la conception et au développement de pipelines d’IA dans le cadre d’un projet confidentiel.",
+        "Contribution active à la recherche et au développement en IA, sur des solutions avancées de vision par ordinateur et d’apprentissage profond.",
 
       "experience.amsys.bullet2":
-        "Conception et évaluation de workflows d’IA pour des solutions d’analyse intelligentes.",
+        "Participation au développement, à l’expérimentation et à l’évaluation de modèles d’IA et de systèmes intelligents.",
 
       "experience.esprim.role":
         "Stagiaire en science des données",
@@ -655,10 +664,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "Notions",
 
       "date.ueljul":
-        "JUIL. 2026 — SEPT. 2026",
+        "JUIL. 2026 — NOV. 2026",
 
       "date.amsys":
-        "AOÛT 2026 — SEPT. 2026",
+        "AOÛT 2026 — DÉC. 2026",
 
       "date.esprim":
         "JUIL. 2026 — AOÛT 2026",
@@ -671,6 +680,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "cv.window":
         "Choisir un CV",
+
+      "experience.uel.bullet3":
+        "Co-autrice d’un article de recherche sur l’évaluation équitable et les politiques d’ordonnancement apprises, actuellement en cours de relecture.",
+
+      "projects.more":
+        "Plus de projets, d’expériences et de code sur mon GitHub.",
+
+      "skills.languages":
+        "Langages",
+
+      "skills.ml":
+        "Machine Learning &amp; IA",
+
+      "skills.llm":
+        "LLM &amp; agents",
+
+      "skills.optim":
+        "Optimisation",
+
+      "skills.webdev":
+        "Web &amp; back-end",
+
+      "skills.data":
+        "Données &amp; outils",
 
       /* VIEWER */
 
@@ -690,21 +723,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "skills.title":
         "Ma boîte à outils.",
-
-      "skills.programming":
-        "Langages de programmation",
-
-      "skills.dataAI":
-        "Données & IA",
-
-      "skills.web":
-        "Développement web",
-
-      "skills.frameworks":
-        "Frameworks",
-
-      "skills.tools":
-        "Outils",
 
       /* EDUCATION */
 
