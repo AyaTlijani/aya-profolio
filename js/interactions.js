@@ -58,6 +58,35 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
 
+    smartroute: {
+      name: "SMARTROUTE",
+      title: "SmartRoute",
+
+      images: [
+        {
+          src: "assets/smartroute-1.png",
+          alt: "SmartRoute sign-in page"
+        },
+        {
+          src: "assets/smartroute-2.png",
+          alt: "SmartRoute overview dashboard"
+        },
+        {
+          src: "assets/smartroute-3.png",
+          alt: "SmartRoute Excel import"
+        },
+        {
+          src: "assets/smartroute-4.png",
+          alt: "SmartRoute dispatch and route map"
+        },
+        {
+          src: "assets/smartroute-5.png",
+          alt: "SmartRoute driver app"
+        }
+      ]
+    },
+
+
     artisan: {
       name: "ARTISANCONNECT",
       title: "ArtisanConnect",

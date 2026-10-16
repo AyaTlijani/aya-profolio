@@ -196,6 +196,18 @@ document.addEventListener("DOMContentLoaded", () => {
       "projects.query.description3":
         "Implemented a read-only SQL sandbox, tested against 16 write and injection attacks, and exposed database tools to other AI assistants through an MCP server.",
 
+      "projects.smart.type":
+        "FULL-STACK / ROUTE OPTIMIZATION",
+
+      "projects.smart.sub":
+        "Delivery Management &amp; Route Optimization.",
+
+      "projects.smart.description1":
+        "Developed a full-stack delivery dispatch platform featuring VRPTW route optimization, automated driver assignment, Excel data validation, real-time delivery tracking, and cash reconciliation.",
+
+      "projects.smart.description2":
+        "Built REST APIs, role-based authentication, interactive dashboards, and delivery analytics with automated end-to-end testing.",
+
       "projects.artisan.type":
         "FULL-STACK DEVELOPMENT / E-COMMERCE",
 
@@ -593,6 +605,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "projects.query.description3":
         "Mise en place d’un bac à sable SQL en lecture seule, testé contre 16 attaques d’écriture et d’injection, et exposition des outils de base de données à d’autres assistants IA via un serveur MCP.",
+
+      "projects.smart.type":
+        "FULL-STACK / OPTIMISATION DE TOURNÉES",
+
+      "projects.smart.sub":
+        "Gestion des livraisons et optimisation de tournées.",
+
+      "projects.smart.description1":
+        "Développement d’une plateforme full-stack de gestion des livraisons intégrant l’optimisation de tournées VRPTW, l’affectation automatique des livreurs, la validation des données Excel, le suivi des livraisons en temps réel et le rapprochement des encaissements.",
+
+      "projects.smart.description2":
+        "Conception d’API REST, d’une authentification par rôles, de tableaux de bord interactifs et d’analyses de livraison, avec des tests de bout en bout automatisés.",
 
       "projects.artisan.type":
         "DÉVELOPPEMENT FULL-STACK / E-COMMERCE",

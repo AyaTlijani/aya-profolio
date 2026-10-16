@@ -326,3 +326,19 @@ nav a.active {
   border-width: 1px;
   border-radius: 999px;
 }
+
+.project-viewer-window,
+.viewer-image-frame {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--lift);
+  overflow: hidden;
+}
+
+.viewer-arrow,
+.viewer-close,
+.viewer-counter {
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  box-shadow: none;
+}
