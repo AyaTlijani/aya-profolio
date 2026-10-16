@@ -250,9 +250,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "cv.window":
         "Choose a CV",
 
-      "footer.game":
-        "✦ bonus: a tiny game",
-
       /* VIEWER */
 
       "viewer.close":
@@ -650,9 +647,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "cv.window":
         "Choisir un CV",
-
-      "footer.game":
-        "✦ bonus : un petit jeu",
 
       /* VIEWER */
 

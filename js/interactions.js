@@ -676,18 +676,3 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 });
-
-/* Bonus game: hidden until the visitor asks for it from the footer. */
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector("#arcade-toggle");
-  const arcade = document.querySelector("#arcade");
-
-  if (!toggle || !arcade) {
-    return;
-  }
-
-  toggle.addEventListener("click", () => {
-    arcade.hidden = false;
-    arcade.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-});
