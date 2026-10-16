@@ -205,6 +205,54 @@ document.addEventListener("DOMContentLoaded", () => {
       "projects.artisan.description":
         "Developed a desktop (JavaFX) and web (Symfony/PHP) e-commerce application integrating a product catalog, shopping cart, and user management.",
 
+      "terminal.helloCommand":
+        "hello",
+
+      "terminal.city":
+        "Monastir, Tunisia",
+
+      "terminal.status":
+        "STATUS",
+
+      "education.arabic":
+        "Arabic",
+
+      "education.native":
+        "Native",
+
+      "education.english":
+        "English",
+
+      "education.french":
+        "French",
+
+      "education.spanish":
+        "Spanish",
+
+      "education.basic":
+        "Basic",
+
+      "date.ueljul":
+        "JUL 2026 — SEP 2026",
+
+      "date.amsys":
+        "AUG 2026 — SEP 2026",
+
+      "date.esprim":
+        "JUL 2026 — AUG 2026",
+
+      "date.gct":
+        "JUL 2025 — AUG 2025",
+
+      "viewer.preview":
+        "PROJECT PREVIEW",
+
+      "cv.window":
+        "Choose a CV",
+
+      "footer.game":
+        "✦ bonus: a tiny game",
+
       /* VIEWER */
 
       "viewer.close":
@@ -557,6 +605,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "projects.artisan.description":
         "Développement d’une application e-commerce desktop (JavaFX) et web (Symfony/PHP), intégrant un catalogue de produits, un panier d’achat et la gestion des utilisateurs.",
+
+      "terminal.helloCommand":
+        "hello",
+
+      "terminal.city":
+        "Monastir, Tunisie",
+
+      "terminal.status":
+        "STATUT",
+
+      "education.arabic":
+        "Arabe",
+
+      "education.native":
+        "Langue maternelle",
+
+      "education.english":
+        "Anglais",
+
+      "education.french":
+        "Français",
+
+      "education.spanish":
+        "Espagnol",
+
+      "education.basic":
+        "Notions",
+
+      "date.ueljul":
+        "JUIL. 2026 — SEPT. 2026",
+
+      "date.amsys":
+        "AOÛT 2026 — SEPT. 2026",
+
+      "date.esprim":
+        "JUIL. 2026 — AOÛT 2026",
+
+      "date.gct":
+        "JUIL. 2025 — AOÛT 2025",
+
+      "viewer.preview":
+        "APERÇU DU PROJET",
+
+      "cv.window":
+        "Choisir un CV",
+
+      "footer.game":
+        "✦ bonus : un petit jeu",
 
       /* VIEWER */
 

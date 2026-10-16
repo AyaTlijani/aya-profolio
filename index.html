@@ -22,8 +22,8 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/cursor.css">
   <link rel="stylesheet" href="css/enhancements.css">
+  <link rel="stylesheet" href="css/polish.css">
 
   <script>
     /* Apply the saved theme before the page paints (no flash). */
@@ -49,7 +49,7 @@
 
       <a href="#home" class="logo">
         <span class="logo-icon">✦</span>
-        aya.exe
+        Aya Tlijani
       </a>
 
       <nav id="main-nav">
@@ -203,7 +203,7 @@
               <button>×</button>
             </div>
 
-            <span>aya_profile.exe</span>
+            <span>~/aya</span>
 
           </div>
 
@@ -464,7 +464,7 @@
 
             <div class="company-info">
 
-              <span class="date">
+              <span class="date" data-i18n="date.ueljul">
                 JUL 2026 — SEP 2026
               </span>
 
@@ -534,7 +534,7 @@
 
             <div class="company-info">
 
-              <span class="date">
+              <span class="date" data-i18n="date.amsys">
                 AUG 2026 — SEP 2026
               </span>
 
@@ -586,7 +586,7 @@
 
             <div class="company-info">
 
-              <span class="date">
+              <span class="date" data-i18n="date.esprim">
                 JUL 2026 — AUG 2026
               </span>
 
@@ -653,7 +653,7 @@
 
             <div class="company-info">
 
-              <span class="date">
+              <span class="date" data-i18n="date.gct">
                 JUL 2025 — AUG 2025
               </span>
 
@@ -798,10 +798,9 @@
               class="view-photos-button"
               type="button"
               data-gallery="querypilot"
-              data-i18n="projects.viewScreenshots"
             >
               <span>✦</span>
-              VIEW SCREENSHOTS
+              <em data-i18n="projects.viewScreenshots">VIEW SCREENSHOTS</em>
               <b>03 ↗</b>
             </button>
 
@@ -907,10 +906,9 @@
               class="view-photos-button"
               type="button"
               data-gallery="artisan"
-              data-i18n="projects.viewScreenshots"
             >
               <span>✦</span>
-              VIEW SCREENSHOTS
+              <em data-i18n="projects.viewScreenshots">VIEW SCREENSHOTS</em>
               <b>03 ↗</b>
             </button>
 
@@ -935,7 +933,7 @@
         <div class="project-viewer-header">
 
           <span id="viewer-title">
-            project_preview.exe
+            Project
           </span>
 
           <button
@@ -993,7 +991,7 @@
         <div class="project-viewer-footer">
 
           <span id="viewer-project-name">
-            PROJECT PREVIEW
+            <span data-i18n="viewer.preview">PROJECT PREVIEW</span>
           </span>
 
           <span data-i18n="viewer.instructions">
@@ -1367,7 +1365,7 @@
 
     <!-- ================= MINI GAME ================= -->
 
-<section class="arcade">
+<section class="arcade" id="arcade" hidden>
 
   <div class="arcade-window">
 
@@ -1520,7 +1518,7 @@
       <div class="cv-choice-header">
 
         <span>
-          choose_cv.exe
+          <span data-i18n="cv.window">Choose a CV</span>
         </span>
 
         <button
@@ -1586,12 +1584,16 @@
   <footer>
 
     <span>
-      ♡ AYA_TLIJANI.EXE
+      Aya Tlijani
     </span>
 
     <span data-i18n="footer.built">
       BUILT WITH HTML / CSS / JS
     </span>
+
+    <button type="button" class="arcade-toggle" id="arcade-toggle" data-i18n="footer.game">
+      ✦ bonus: a tiny game
+    </button>
 
     <span>
       © 2026
@@ -1609,18 +1611,12 @@
     data-i18n-aria="ui.backToTop"
   >↑</button>
 
-  <div class="y2k-cursor" aria-hidden="true">
-    <span class="cursor-pointer"></span>
-    <span class="cursor-sparkle">✦</span>
-  </div>
-
 
   <script src="js/main.js"></script>
   <script src="js/interactions.js"></script>
   <script src="js/game.js"></script>
   <script src="js/enhancements.js"></script>
   <script src="js/language.js"></script>
-  <script src="js/cursor.js"></script>
 
 </body>
 </html>

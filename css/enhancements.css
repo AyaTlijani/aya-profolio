@@ -789,10 +789,6 @@ body.window-maximized::after {
   background-size: 28px 28px;
 }
 
-[data-theme="dark"] .cursor-pointer {
-  background: #ffffff;
-}
-
 [data-theme="dark"] .image-fallback {
   background: var(--surface) !important;
 }
