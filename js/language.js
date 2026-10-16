@@ -153,13 +153,13 @@ document.addEventListener("DOMContentLoaded", () => {
         "Data Science Intern",
 
       "experience.esprim.description":
-        "Contributed to the design of a five-competency framework and associated evaluation grids within the I5-Assist project.",
+        "<b>Learning Analytics &amp; Competency Assessment</b>",
 
       "experience.esprim.bullet1":
-        "Developed a pipeline for extraction and feature engineering, transforming learning data into measurable competency indicators.",
+        "Developed an NLP pipeline using text classification and weak supervision to assess student competencies from AI interaction logs.",
 
       "experience.esprim.bullet2":
-        "Applied data analysis and NLP techniques to structured and unstructured educational data.",
+        "Built an interactive dashboard for competency assessment, evidence-based scoring, student profiling, and learning progression analysis.",
 
       "experience.gct.role":
         "Introductory Internship",
@@ -563,13 +563,13 @@ document.addEventListener("DOMContentLoaded", () => {
         "Stagiaire en science des données",
 
       "experience.esprim.description":
-        "Contribution à la conception d’un référentiel de cinq compétences et des grilles d’évaluation associées dans le cadre du projet industriel I5-Assist.",
+        "<b>Learning Analytics et évaluation des compétences</b>",
 
       "experience.esprim.bullet1":
-        "Développement d’un pipeline d’extraction et de feature engineering pour transformer des données d’apprentissage en indicateurs de compétences mesurables.",
+        "Développement d’un pipeline NLP basé sur la classification de texte et la supervision faible pour évaluer les compétences des étudiants à partir de leurs échanges avec l’IA.",
 
       "experience.esprim.bullet2":
-        "Application de techniques d’analyse de données et de NLP pour extraire des indicateurs de compétences à partir de données éducatives structurées et non structurées.",
+        "Conception d’un tableau de bord interactif pour l’évaluation des compétences, le scoring fondé sur des preuves, le profilage des étudiants et l’analyse de la progression.",
 
       "experience.gct.role":
         "Stage d’initiation",

@@ -58,6 +58,27 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
 
+    esprim: {
+      name: "LEARNING ANALYTICS",
+      title: "Learning Analytics & Competency Assessment",
+
+      images: [
+        {
+          src: "assets/esprim-1.png",
+          alt: "Competency evidence overview"
+        },
+        {
+          src: "assets/esprim-2.png",
+          alt: "Human check labelling page"
+        },
+        {
+          src: "assets/esprim-3.png",
+          alt: "Live analyzer"
+        }
+      ]
+    },
+
+
     smartroute: {
       name: "SMARTROUTE",
       title: "SmartRoute",
@@ -393,7 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ======================================================== */
 
   document
-  .querySelectorAll(".view-photos-button")
+  .querySelectorAll(".view-photos-button[data-gallery]")
     .forEach(button => {
 
       button.addEventListener("click", event => {
