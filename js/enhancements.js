@@ -435,7 +435,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".project-thumb").forEach(thumb => {
     thumb.addEventListener("click", () => {
-      const card = thumb.closest(".project-card");
+      const card = thumb.closest(".project-card, .experience-card");
       const viewButton = card && card.querySelector(".view-photos-button");
       if (viewButton) viewButton.click();
     });

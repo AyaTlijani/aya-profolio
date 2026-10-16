@@ -465,7 +465,7 @@
             <div class="company-info">
 
               <span class="date" data-i18n="date.ueljul">
-                JUL 2026 — SEP 2026
+                JUL 2026 — NOV 2026
               </span>
 
               <h3>
@@ -487,32 +487,35 @@
           </div>
 
           <p data-i18n="experience.uel.description">
-            Working on applying artificial intelligence to
-            project management and resource-constrained
-            scheduling optimization.
+            <b>GNN-Based Reinforcement Learning for Project Scheduling</b>
           </p>
 
           <ul>
 
             <li data-i18n="experience.uel.bullet1">
-              Developing a solution for the Resource-Constrained
-              Project Scheduling Problem (RCPSP).
+              Developed graph neural network policies using PPO and self-labeling to solve the
+              Resource-Constrained Project Scheduling Problem (RCPSP), benchmarking against
+              classical scheduling heuristics.
             </li>
 
             <li data-i18n="experience.uel.bullet2">
-              Implementing a Graph Isomorphism Network (GIN)
-              with Proximal Policy Optimization (PPO) using
-              PyTorch and PyTorch Geometric.
+              Investigated LFT-anchored learning and conducted reproducible experiments across
+              PSPLIB instances with up to 120 activities, statistical testing, and comparative
+              evaluation.
+            </li>
+
+            <li data-i18n="experience.uel.bullet3">
+              Co-authored a research paper examining fair benchmarking and learned scheduling
+              policies, currently under review.
             </li>
 
           </ul>
 
           <div class="tags">
+            <span>Python</span>
             <span>PyTorch</span>
-            <span>PyTorch Geometric</span>
-            <span>GIN</span>
-            <span>PPO</span>
-            <span>RCPSP</span>
+            <span>GNNs</span>
+            <span>Deep Reinforcement Learning</span>
           </div>
 
         </article>
@@ -535,7 +538,7 @@
             <div class="company-info">
 
               <span class="date" data-i18n="date.amsys">
-                AUG 2026 — SEP 2026
+                AUG 2026 — DEC 2026
               </span>
 
               <h3>
@@ -546,7 +549,7 @@
                 class="role"
                 data-i18n="experience.amsys.role"
               >
-                Artificial Intelligence Intern
+                AI Engineering Intern
               </p>
 
             </div>
@@ -556,16 +559,23 @@
           <ul>
 
             <li data-i18n="experience.amsys.bullet1">
-              Contributed to the design and development of
-              AI pipelines as part of a confidential project.
+              Actively contributing to AI research and development, working on advanced
+              computer vision and deep learning solutions.
             </li>
 
             <li data-i18n="experience.amsys.bullet2">
-              Designed and evaluated AI workflows for
-              intelligent analysis solutions.
+              Supporting the development, experimentation, and evaluation of AI models and
+              intelligent systems.
             </li>
 
           </ul>
+
+          <div class="tags">
+            <span>AI Research &amp; Development</span>
+            <span>Computer Vision</span>
+            <span>Deep Learning</span>
+            <span>Generative AI</span>
+          </div>
 
         </article>
 
@@ -632,6 +642,24 @@
             <span>scikit-learn</span>
             <span>Streamlit</span>
           </div>
+
+          <button
+            type="button"
+            class="project-thumb exp-thumb"
+            data-gallery="esprim"
+            aria-label="Learning Analytics — open screenshots"
+          >
+            <span class="project-thumb-bar" aria-hidden="true">
+              <i></i><i></i><i></i>
+            </span>
+            <img
+              src="assets/esprim-1.png"
+              alt="Learning Analytics dashboard screenshot"
+              loading="lazy"
+              decoding="async"
+            >
+            <span class="project-thumb-chip" aria-hidden="true">03 ↗</span>
+          </button>
 
           <div class="project-actions">
             <button
@@ -1040,6 +1068,16 @@
 
       </article>
 
+      <a
+        class="github-note"
+        href="https://github.com/AyaTlijani"
+        target="_blank"
+        rel="noopener"
+      >
+        <span data-i18n="projects.more">More projects, experiments and code on my GitHub.</span>
+        <b>github.com/AyaTlijani ↗</b>
+      </a>
+
     </section>
 
     <!-- ================= PROJECT PHOTO VIEWER ================= -->
@@ -1148,97 +1186,105 @@
       <div class="skills-grid">
 
         <div class="skill-box lavender">
-
           <div class="skill-number">01</div>
           <div class="skill-icon">⌨</div>
-
-          <h3 data-i18n="skills.programming">
-            Programming
+          <h3 data-i18n="skills.languages">
+            Languages
           </h3>
-
           <div class="skill-list">
             <span>Python</span>
-            <span>Java</span>
-            <span>PHP</span>
             <span>SQL</span>
+            <span>Java</span>
+            <span>JavaScript</span>
+            <span>PHP</span>
             <span>C</span>
             <span>C#</span>
           </div>
-
         </div>
 
         <div class="skill-box blue">
-
           <div class="skill-number">02</div>
           <div class="skill-icon">✦</div>
-
-          <h3 data-i18n="skills.dataAI">
-            Data & AI
+          <h3 data-i18n="skills.ml">
+            Machine Learning &amp; AI
           </h3>
-
           <div class="skill-list">
-            <span>Machine Learning</span>
             <span>Deep Learning</span>
-            <span>NLP</span>
-            <span>PyTorch</span>
-            <span>TensorFlow</span>
-            <span>CNN</span>
+            <span>Deep Reinforcement Learning</span>
             <span>Graph Neural Networks</span>
+            <span>NLP</span>
+            <span>Computer Vision</span>
+            <span>Generative AI</span>
+            <span>PyTorch</span>
+            <span>PyTorch Geometric</span>
+            <span>TensorFlow</span>
+            <span>scikit-learn</span>
           </div>
-
         </div>
 
         <div class="skill-box sky">
-
           <div class="skill-number">03</div>
           <div class="skill-icon">◇</div>
-
-          <h3 data-i18n="skills.web">
-            Web
+          <h3 data-i18n="skills.llm">
+            LLMs &amp; Agents
           </h3>
-
           <div class="skill-list">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
+            <span>LangGraph</span>
+            <span>MCP</span>
+            <span>Ollama</span>
+            <span>Text-to-SQL</span>
+            <span>LLM Evaluation</span>
           </div>
-
         </div>
 
         <div class="skill-box purple-blue">
-
           <div class="skill-number">04</div>
           <div class="skill-icon">◈</div>
-
-          <h3 data-i18n="skills.frameworks">
-            Frameworks
+          <h3 data-i18n="skills.optim">
+            Optimization
           </h3>
-
           <div class="skill-list">
-            <span>Symfony</span>
-            <span>JavaFX</span>
-            <span>React</span>
-            <span>Angular</span>
+            <span>OR-Tools</span>
+            <span>Vehicle Routing (VRPTW)</span>
+            <span>Project Scheduling (RCPSP)</span>
           </div>
-
         </div>
 
         <div class="skill-box soft-pink">
-
           <div class="skill-number">05</div>
-          <div class="skill-icon">♡</div>
-
-          <h3 data-i18n="skills.tools">
-            Tools
+          <div class="skill-icon">▣</div>
+          <h3 data-i18n="skills.webdev">
+            Web &amp; Backend
           </h3>
-
           <div class="skill-list">
-            <span>Git</span>
-            <span>Jupyter</span>
+            <span>FastAPI</span>
+            <span>REST APIs</span>
+            <span>React</span>
+            <span>Angular</span>
+            <span>Symfony</span>
+            <span>JavaFX</span>
+            <span>HTML / CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-box lavender">
+          <div class="skill-number">06</div>
+          <div class="skill-icon">♡</div>
+          <h3 data-i18n="skills.data">
+            Data &amp; Tools
+          </h3>
+          <div class="skill-list">
+            <span>Pandas</span>
+            <span>NumPy</span>
+            <span>SQLite</span>
+            <span>Streamlit</span>
             <span>Power BI</span>
             <span>Databricks</span>
+            <span>Jupyter</span>
+            <span>Git</span>
+            <span>Docker</span>
+            <span>pytest</span>
           </div>
-
         </div>
 
       </div>
