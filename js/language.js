@@ -181,6 +181,21 @@ document.addEventListener("DOMContentLoaded", () => {
       "projects.viewScreenshot":
         "VIEW SCREENSHOT",
 
+      "projects.query.type":
+        "LLM AGENTS / TEXT-TO-SQL",
+
+      "projects.query.sub":
+        "Self-Correcting Text-to-SQL Agent.",
+
+      "projects.query.description1":
+        "Built a LangGraph-based LLM agent that generates SQL from natural-language questions, executes queries, and automatically diagnoses and repairs failures.",
+
+      "projects.query.description2":
+        "Evaluated on 200 BIRD Mini-Dev questions across 11 databases using Qwen2.5-Coder 7B and Gemini API; improved execution accuracy from 47% to 51% with Qwen and from 62.5% to 64% with Gemini.",
+
+      "projects.query.description3":
+        "Implemented a read-only SQL sandbox, tested against 16 write and injection attacks, and exposed database tools to other AI assistants through an MCP server.",
+
       "projects.artisan.type":
         "FULL-STACK DEVELOPMENT / E-COMMERCE",
 
@@ -189,30 +204,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "projects.artisan.description":
         "Developed a desktop (JavaFX) and web (Symfony/PHP) e-commerce application integrating a product catalog, shopping cart, and user management.",
-
-      "projects.brain.type":
-        "MEDICAL IMAGE CLASSIFICATION",
-
-      "projects.brain.sub":
-        "Medical Image Classification.",
-
-      "projects.brain.description1":
-        "Implemented a convolutional neural network (CNN) in Python to classify brain tumors from MRI images.",
-
-      "projects.brain.description2":
-        "Applied data augmentation techniques and evaluated model performance using accuracy, precision, and recall metrics, with analysis of the results.",
-
-      "projects.fraud.type":
-        "BANK FRAUD DETECTION / DEEP LEARNING",
-
-      "projects.fraud.sub":
-        "Bank Fraud Detection with Deep Learning.",
-
-      "projects.fraud.description1":
-        "Analyzed and explored a Kaggle transaction dataset using Python, simulated a real-time transaction stream, and implemented a process to detect fraudulent patterns.",
-
-      "projects.fraud.description2":
-        "Designed and deployed a deep learning pipeline in TensorFlow combining an autoencoder, attention mechanisms and transformer architectures to assign fraud scores to transactions and assess their potential fraud risk.",
 
       /* VIEWER */
 
@@ -543,6 +534,21 @@ document.addEventListener("DOMContentLoaded", () => {
       "projects.viewScreenshot":
         "VOIR LA CAPTURE",
 
+      "projects.query.type":
+        "AGENTS LLM / TEXT-TO-SQL",
+
+      "projects.query.sub":
+        "Agent Text-to-SQL auto-correctif.",
+
+      "projects.query.description1":
+        "Développement d’un agent LLM basé sur LangGraph qui génère du SQL à partir de questions en langage naturel, exécute les requêtes, puis diagnostique et corrige automatiquement les échecs.",
+
+      "projects.query.description2":
+        "Évaluation sur 200 questions de BIRD Mini-Dev couvrant 11 bases de données avec Qwen2.5-Coder 7B et l’API Gemini ; exactitude d’exécution améliorée de 47 % à 51 % avec Qwen et de 62,5 % à 64 % avec Gemini.",
+
+      "projects.query.description3":
+        "Mise en place d’un bac à sable SQL en lecture seule, testé contre 16 attaques d’écriture et d’injection, et exposition des outils de base de données à d’autres assistants IA via un serveur MCP.",
+
       "projects.artisan.type":
         "DÉVELOPPEMENT FULL-STACK / E-COMMERCE",
 
@@ -551,30 +557,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "projects.artisan.description":
         "Développement d’une application e-commerce desktop (JavaFX) et web (Symfony/PHP), intégrant un catalogue de produits, un panier d’achat et la gestion des utilisateurs.",
-
-      "projects.brain.type":
-        "CLASSIFICATION D’IMAGES MÉDICALES",
-
-      "projects.brain.sub":
-        "Classification d’images médicales.",
-
-      "projects.brain.description1":
-        "Mise en œuvre d’un réseau de neurones convolutif (CNN) en Python pour la classification de tumeurs cérébrales à partir d’images IRM.",
-
-      "projects.brain.description2":
-        "Application de techniques d’augmentation de données et évaluation des performances du modèle à l’aide des métriques d’exactitude, précision et rappel, avec analyse des résultats.",
-
-      "projects.fraud.type":
-        "DÉTECTION DE FRAUDE BANCAIRE / DEEP LEARNING",
-
-      "projects.fraud.sub":
-        "Détection de fraude bancaire par deep learning.",
-
-      "projects.fraud.description1":
-        "Analyse et exploration d’un jeu de données de transactions issu de Kaggle avec Python, avec simulation d’un flux de transactions en temps réel et mise en place d’un processus de détection des schémas frauduleux.",
-
-      "projects.fraud.description2":
-        "Conception et déploiement d’un pipeline d’apprentissage profond sous TensorFlow, combinant un autoencodeur, des mécanismes d’attention et des architectures de transformeurs pour attribuer un score de fraude aux transactions et évaluer leur potentiel caractère frauduleux.",
 
       /* VIEWER */
 

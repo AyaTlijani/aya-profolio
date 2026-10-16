@@ -37,27 +37,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const projectGalleries = {
 
-    fraudexia: {
-      name: "FRAUDEX AI",
-      title: "fraudex_ai.exe",
+    querypilot: {
+      name: "QUERYPILOT",
+      title: "querypilot.exe",
 
       images: [
         {
-          src: "assets/fraudexia.png",
-          alt: "FraudExIA project screenshot"
-        }
-      ]
-    },
-
-
-    brain: {
-      name: "BRAIN TUMOR DETECTION",
-      title: "brain_tumor.exe",
-
-      images: [
+          src: "assets/querypilot-1.png",
+          alt: "QueryPilot demo: agent trace and answer"
+        },
         {
-          src: "assets/brain-tumor.png",
-          alt: "Brain Tumor Detection project screenshot"
+          src: "assets/querypilot-2.png",
+          alt: "QueryPilot benchmark results"
+        },
+        {
+          src: "assets/querypilot-3.png",
+          alt: "QueryPilot upload your own data"
         }
       ]
     },

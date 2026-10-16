@@ -557,6 +557,10 @@
     background 0.12s ease;
 }
 
+a.view-photos-button {
+  text-decoration: none;
+}
+
 .view-photos-button span {
   color: #806cc9;
   font-size: 13px;
