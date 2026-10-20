@@ -196,6 +196,18 @@ document.addEventListener("DOMContentLoaded", () => {
       "projects.query.description3":
         "Implemented a read-only SQL sandbox, tested against 16 write and injection attacks, and exposed database tools to other AI assistants through an MCP server.",
 
+      "projects.surgi.type":
+        "COMPUTER VISION / MEDICAL AI · IN PROGRESS",
+
+      "projects.surgi.sub":
+        "AI Analysis of Surgical Videos — in collaboration with Tradrly.",
+
+      "projects.surgi.description1":
+        "Developing an AI system that analyzes surgery videos to recognize each stage of the operation and the instruments used, to produce automatic surgical reports.",
+
+      "projects.surgi.description2":
+        "Trained a deep learning model that identifies surgical instruments with 95% accuracy on unseen videos.",
+
       "projects.smart.type":
         "FULL-STACK / ROUTE OPTIMIZATION",
 
@@ -614,6 +626,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "projects.query.description3":
         "Mise en place d’un bac à sable SQL en lecture seule, testé contre 16 attaques d’écriture et d’injection, et exposition des outils de base de données à d’autres assistants IA via un serveur MCP.",
+
+      "projects.surgi.type":
+        "COMPUTER VISION / IA MÉDICALE · EN COURS",
+
+      "projects.surgi.sub":
+        "Analyse IA de vidéos chirurgicales — en collaboration avec Tradrly.",
+
+      "projects.surgi.description1":
+        "Développement d’un système d’IA qui analyse des vidéos de chirurgie pour reconnaître chaque étape de l’opération et les instruments utilisés, afin de générer des rapports chirurgicaux automatiques.",
+
+      "projects.surgi.description2":
+        "Entraînement d’un modèle de deep learning qui identifie les instruments chirurgicaux avec 95 % de précision sur des vidéos inédites.",
 
       "projects.smart.type":
         "FULL-STACK / OPTIMISATION DE TOURNÉES",
