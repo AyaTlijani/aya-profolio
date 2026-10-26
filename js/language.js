@@ -181,6 +181,21 @@ document.addEventListener("DOMContentLoaded", () => {
       "projects.viewScreenshot":
         "VIEW SCREENSHOT",
 
+      "projects.scilit.type":
+        "NLP · RAG · LLM",
+
+      "projects.scilit.sub":
+        "RAG System for Verified Literature Reviews.",
+
+      "projects.scilit.description1":
+        "Built an end-to-end RAG system that answers research questions over 1,109 NLP papers, combining hybrid retrieval (BM25 + dense embeddings) with a local LLM that writes cited literature reviews.",
+
+      "projects.scilit.description2":
+        "Added an automatic fact-checking step that verifies every generated sentence against the source papers: 95% of sentences pass, each linked to its exact source.",
+
+      "projects.scilit.description3":
+        "Fine-tuned SciBERT for scientific sentence classification (0.749 macro-F1) and reproduced a published benchmark result (0.855 F1).",
+
       "projects.query.type":
         "LLM AGENTS / TEXT-TO-SQL",
 
@@ -611,6 +626,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "projects.viewScreenshot":
         "VOIR LA CAPTURE",
+
+      "projects.scilit.type":
+        "NLP · RAG · LLM",
+
+      "projects.scilit.sub":
+        "Système RAG pour des états de l’art vérifiés.",
+
+      "projects.scilit.description1":
+        "Conception d’un système RAG de bout en bout qui répond à des questions de recherche sur 1 109 articles de NLP, en combinant une recherche hybride (BM25 + embeddings denses) et un LLM local qui rédige des états de l’art cités.",
+
+      "projects.scilit.description2":
+        "Ajout d’une étape de vérification automatique qui confronte chaque phrase générée aux articles sources : 95 % des phrases sont validées, chacune reliée à sa source exacte.",
+
+      "projects.scilit.description3":
+        "Fine-tuning de SciBERT pour la classification de phrases scientifiques (0,749 de macro-F1) et reproduction d’un résultat publié (0,855 de F1).",
 
       "projects.query.type":
         "AGENTS LLM / TEXT-TO-SQL",

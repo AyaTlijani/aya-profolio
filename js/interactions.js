@@ -37,6 +37,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const projectGalleries = {
 
+    scilit: {
+      name: "SCILIT",
+      title: "SciLit",
+
+      images: [
+        {
+          src: "assets/scilit-1.png",
+          alt: "SciLit home page"
+        }
+      ]
+    },
+
+
     querypilot: {
       name: "QUERYPILOT",
       title: "QueryPilot",
