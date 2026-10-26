@@ -45,6 +45,18 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           src: "assets/scilit-1.png",
           alt: "SciLit home page"
+        },
+        {
+          src: "assets/scilit-2.png",
+          alt: "SciLit retrieved papers"
+        },
+        {
+          src: "assets/scilit-3.png",
+          alt: "SciLit verified review with citations"
+        },
+        {
+          src: "assets/scilit-4.png",
+          alt: "SciLit comparison table"
         }
       ]
     },
