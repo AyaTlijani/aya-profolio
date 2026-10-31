@@ -331,6 +331,18 @@ document.addEventListener("DOMContentLoaded", () => {
       "skills.data":
         "Data &amp; Tools",
 
+      "hero.into":
+        "currently working on",
+
+      "hero.rotate":
+        "RAG systems|LLM agents|voice AI|surgical video AI|scheduling with GNNs",
+
+      "hero.sticker1":
+        "✦ research @ UEL",
+
+      "hero.sticker4":
+        "Monastir, TN ✦",
+
       /* VIEWER */
 
       "viewer.close":
@@ -794,6 +806,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "skills.data":
         "Données &amp; outils",
+
+      "hero.into":
+        "en ce moment, je travaille sur",
+
+      "hero.rotate":
+        "les systèmes RAG|les agents LLM|l’IA vocale|l’IA pour la vidéo chirurgicale|l’ordonnancement avec les GNN",
+
+      "hero.sticker1":
+        "✦ recherche @ UEL",
+
+      "hero.sticker4":
+        "Monastir, TN ✦",
 
       /* VIEWER */
 

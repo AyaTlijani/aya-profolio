@@ -780,3 +780,41 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 });
+
+
+/* Hero: rotate the "currently working on" word every few seconds. */
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.querySelector("#rotate-word");
+  if (!el) {
+    return;
+  }
+
+  let index = 0;
+
+  function words() {
+    const table = window.siteTranslations || {};
+    const lang = document.documentElement.lang === "fr" ? "fr" : "en";
+    const list = table[lang] && table[lang]["hero.rotate"];
+    return list ? list.split("|") : [el.textContent];
+  }
+
+  function show() {
+    const list = words();
+    el.classList.remove("in");
+    setTimeout(() => {
+      el.textContent = list[index % list.length];
+      el.classList.add("in");
+    }, 250);
+  }
+
+  show();
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    setInterval(() => {
+      index += 1;
+      show();
+    }, 2600);
+  }
+
+  document.addEventListener("site:language", show);
+});
