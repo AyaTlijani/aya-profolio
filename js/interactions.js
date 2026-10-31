@@ -959,7 +959,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Little actions in between. */
   const actions = [
     () => { play("dance", 1800); burst("♪", 4); },
-    () => { play("kiss", 1200); burst("♥", 5); say(pick("mascot.kiss")); },
+    () => { play("kiss", 1200); burst("✦", 5); say(pick("mascot.kiss")); },
     () => { play("hop", 700); say(pick("mascot.pitch"), "cv"); },
     () => { play("wave", 1400); say(pick("mascot.idle"), "#projects"); }
   ];

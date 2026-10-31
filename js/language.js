@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Click me to see my projects ✦|Have you seen my projects yet? 👀",
 
       "mascot.kiss":
-        "Thanks for stopping by ♡|Mwah ♡",
+        "Thanks for stopping by ✦|New idea loading… 💡",
 
       /* VIEWER */
 
@@ -877,7 +877,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Clique ici pour voir mes projets ✦|Tu as vu mes projets ? 👀",
 
       "mascot.kiss":
-        "Merci de ta visite ♡|Bisous ♡",
+        "Merci de ta visite ✦|Nouvelle idée en cours… 💡",
 
       /* VIEWER */
 
