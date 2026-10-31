@@ -818,3 +818,94 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("site:language", show);
 });
+
+
+/* Mini pixel Aya: idles in the corner and now and then dances,
+   blows kisses, waves or says something. Click her for an action. */
+document.addEventListener("DOMContentLoaded", () => {
+  const box = document.querySelector("#mascot");
+  const body = document.querySelector("#mascot-body");
+  const bubble = document.querySelector("#mascot-bubble");
+  const closer = document.querySelector("#mascot-close");
+
+  if (!box || !body || !bubble || !closer) {
+    return;
+  }
+
+  try {
+    if (localStorage.getItem("mascot-hidden") === "1") {
+      box.remove();
+      return;
+    }
+  } catch (error) {}
+
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let busy = false;
+  let bubbleTimer = null;
+
+  function lines() {
+    const table = window.siteTranslations || {};
+    const lang = document.documentElement.lang === "fr" ? "fr" : "en";
+    const list = table[lang] && table[lang]["mascot.lines"];
+    return list ? list.split("|") : ["Hi, I'm Aya ✦"];
+  }
+
+  function say(text) {
+    bubble.textContent = text;
+    bubble.classList.add("show");
+    clearTimeout(bubbleTimer);
+    bubbleTimer = setTimeout(() => bubble.classList.remove("show"), 3200);
+  }
+
+  function burst(symbol, count) {
+    for (let i = 0; i < count; i += 1) {
+      const bit = document.createElement("span");
+      bit.className = "mascot-bit";
+      bit.textContent = symbol;
+      bit.style.left = `${30 + Math.random() * 40}%`;
+      bit.style.animationDelay = `${i * 0.18}s`;
+      box.appendChild(bit);
+      setTimeout(() => bit.remove(), 2200 + i * 180);
+    }
+  }
+
+  function play(move, ms) {
+    body.classList.add(move);
+    setTimeout(() => body.classList.remove(move), ms);
+  }
+
+  const actions = [
+    () => { play("dance", 1800); burst("♪", 4); },
+    () => { play("kiss", 1200); burst("♥", 5); },
+    () => { play("wave", 1400); say(lines()[0]); },
+    () => { const l = lines(); say(l[1 + Math.floor(Math.random() * (l.length - 1))]); play("hop", 700); }
+  ];
+
+  function act(index) {
+    if (busy) {
+      return;
+    }
+    busy = true;
+    const pick = index !== undefined ? index : Math.floor(Math.random() * actions.length);
+    actions[pick]();
+    setTimeout(() => { busy = false; }, 1900);
+  }
+
+  body.addEventListener("click", () => act());
+
+  closer.addEventListener("click", () => {
+    box.remove();
+    try { localStorage.setItem("mascot-hidden", "1"); } catch (error) {}
+  });
+
+  setTimeout(() => { say(lines()[0]); play("wave", 1400); }, 2500);
+
+  if (!calm) {
+    (function loop() {
+      setTimeout(() => {
+        if (!document.hidden) act();
+        loop();
+      }, 14000 + Math.random() * 7000);
+    })();
+  }
+});

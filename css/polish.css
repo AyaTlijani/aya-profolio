@@ -595,3 +595,138 @@ nav a.active {
   .hero-blob, .spark, .sticker, .hero-band-track { animation: none; }
   .name-mark { animation: none; background-size: 100% 100%; }
 }
+
+/* =========================================================
+   MINI PIXEL AYA (corner mascot)
+========================================================= */
+
+.mascot {
+  position: fixed;
+  left: 18px;
+  bottom: 12px;
+  z-index: 140;
+  width: 66px;
+}
+
+.mascot-body {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  animation: mascot-bob 3s ease-in-out infinite;
+  transform-origin: 50% 100%;
+  filter: drop-shadow(0 6px 8px rgba(40, 30, 90, 0.25));
+}
+
+.mascot-body img {
+  display: block;
+  width: 66px;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+@keyframes mascot-bob {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -3px; }
+}
+
+.mascot-body.dance { animation: mascot-dance 0.45s ease-in-out 4; }
+@keyframes mascot-dance {
+  0%, 100% { transform: rotate(0) translateY(0); }
+  25% { transform: rotate(-9deg) translateY(-6px); }
+  75% { transform: rotate(9deg) translateY(-6px); }
+}
+
+.mascot-body.kiss { animation: mascot-kiss 0.6s ease-in-out 2; }
+@keyframes mascot-kiss {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08) rotate(-4deg); }
+}
+
+.mascot-body.wave { animation: mascot-wave 0.35s ease-in-out 4; }
+@keyframes mascot-wave {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(7deg); }
+}
+
+.mascot-body.hop { animation: mascot-hop 0.35s ease-out 2; }
+@keyframes mascot-hop {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.mascot-bubble {
+  position: absolute;
+  left: 52px;
+  bottom: 82px;
+  width: max-content;
+  max-width: 210px;
+  padding: 8px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 12px 12px 12px 2px;
+  background: var(--card);
+  color: var(--ink);
+  font: 600 12px/1.35 var(--body);
+  box-shadow: 3px 3px 0 var(--accent);
+  opacity: 0;
+  transform: translateY(6px) scale(0.95);
+  transform-origin: 0 100%;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.mascot-bubble.show {
+  opacity: 1;
+  transform: none;
+}
+
+.mascot-bit {
+  position: absolute;
+  bottom: 70px;
+  color: #e5508f;
+  font: 700 16px/1 var(--body);
+  pointer-events: none;
+  animation: mascot-rise 1.8s ease-out forwards;
+}
+
+@keyframes mascot-rise {
+  0% { opacity: 0; transform: translateY(0) scale(0.6); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-60px) translateX(10px) scale(1.1); }
+}
+
+.mascot-close {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--muted);
+  font: 13px/1 var(--body);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.mascot:hover .mascot-close,
+.mascot-close:focus-visible {
+  opacity: 1;
+}
+
+@media (max-width: 760px) {
+  .mascot { left: 10px; bottom: 8px; width: 48px; }
+  .mascot-body img { width: 48px; }
+  .mascot-bubble { left: 38px; bottom: 62px; max-width: 160px; font-size: 11px; }
+  .mascot-close { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot-body, .mascot-body.dance, .mascot-body.kiss, .mascot-body.wave, .mascot-body.hop { animation: none; }
+  .mascot-bit { display: none; }
+}

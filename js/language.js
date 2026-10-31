@@ -343,6 +343,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero.sticker4":
         "Monastir, TN ✦",
 
+      "mascot.lines":
+        "Hi, I'm Aya ✦|Looking for opportunities 👀|Psst… check out my projects!|Thanks for visiting ♡|Want my CV? It's at the top ↑",
+
       /* VIEWER */
 
       "viewer.close":
@@ -818,6 +821,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "hero.sticker4":
         "Monastir, TN ✦",
+
+      "mascot.lines":
+        "Bonjour, moi c'est Aya ✦|À la recherche d'opportunités 👀|Psst… jette un œil à mes projets !|Merci de ta visite ♡|Mon CV ? Il est tout en haut ↑",
 
       /* VIEWER */
 
