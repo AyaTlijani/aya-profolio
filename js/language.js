@@ -343,8 +343,35 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero.sticker4":
         "Monastir, TN ✦",
 
-      "mascot.lines":
-        "Hi, I'm Aya ✦|Looking for opportunities 👀|Psst… check out my projects!|Thanks for visiting ♡|Want my CV? It's at the top ↑",
+      "mascot.hello":
+        "Hi, I'm Aya ✦ welcome to my corner!",
+
+      "mascot.about":
+        "Yep, that's me in the yellow hoodie ☀",
+
+      "mascot.experience":
+        "Fun fact: I do research at the University of East London 🎓|That research paper? I co-wrote it ✍️",
+
+      "mascot.projects":
+        "SciLit checks every sentence it writes ✦|Psst… MIMO has a demo video, he's my little buddy ▶",
+
+      "mascot.skills":
+        "Python is my comfort language ♡|I speak PyTorch fluently 🔥",
+
+      "mascot.education":
+        "Engineering student, graduating in 2027 🎓",
+
+      "mascot.contact":
+        "Grab my CV and let's build something together ✦",
+
+      "mascot.pitch":
+        "Looking for a PFE intern in 2027? 👀 Click for my CV|I'd love to join your team ✦ my CV is one click away",
+
+      "mascot.idle":
+        "Click me to see my projects ✦|Have you seen my projects yet? 👀",
+
+      "mascot.kiss":
+        "Thanks for stopping by ♡|Mwah ♡",
 
       /* VIEWER */
 
@@ -822,8 +849,35 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero.sticker4":
         "Monastir, TN ✦",
 
-      "mascot.lines":
-        "Bonjour, moi c'est Aya ✦|À la recherche d'opportunités 👀|Psst… jette un œil à mes projets !|Merci de ta visite ♡|Mon CV ? Il est tout en haut ↑",
+      "mascot.hello":
+        "Coucou, moi c'est Aya ✦ bienvenue chez moi !",
+
+      "mascot.about":
+        "Oui, c'est bien moi en sweat jaune ☀",
+
+      "mascot.experience":
+        "Le savais-tu ? Je fais de la recherche à l'University of East London 🎓|Cet article de recherche ? Je l'ai co-écrit ✍️",
+
+      "mascot.projects":
+        "SciLit vérifie chaque phrase qu'il écrit ✦|Psst… MIMO a une vidéo démo, c'est mon petit compagnon ▶",
+
+      "mascot.skills":
+        "Python, c'est ma langue préférée ♡|Je parle PyTorch couramment 🔥",
+
+      "mascot.education":
+        "Élève ingénieure, diplômée en 2027 🎓",
+
+      "mascot.contact":
+        "Prends mon CV et construisons quelque chose ensemble ✦",
+
+      "mascot.pitch":
+        "Vous cherchez une stagiaire PFE en 2027 ? 👀 Cliquez pour mon CV|J'adorerais rejoindre votre équipe ✦ mon CV est à un clic",
+
+      "mascot.idle":
+        "Clique ici pour voir mes projets ✦|Tu as vu mes projets ? 👀",
+
+      "mascot.kiss":
+        "Merci de ta visite ♡|Bisous ♡",
 
       /* VIEWER */
 

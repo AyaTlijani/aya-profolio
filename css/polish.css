@@ -730,3 +730,63 @@ nav a.active {
   .mascot-body, .mascot-body.dance, .mascot-body.kiss, .mascot-body.wave, .mascot-body.hop { animation: none; }
   .mascot-bit { display: none; }
 }
+
+/* Mascot: travelling, rolling, flipping and clickable lines */
+.mascot {
+  transition: left 2.2s ease-in-out;
+}
+
+.mascot.facing-left .mascot-body img {
+  transform: scaleX(-1);
+}
+
+.mascot.walking .mascot-body {
+  animation: mascot-walk 0.32s ease-in-out infinite;
+}
+
+@keyframes mascot-walk {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-5px) rotate(3deg); }
+}
+
+.mascot.rolling .mascot-body {
+  animation: mascot-roll 2.2s ease-in-out 1;
+}
+
+@keyframes mascot-roll {
+  from { transform: rotate(0); }
+  to { transform: rotate(720deg); }
+}
+
+.mascot.facing-left.rolling .mascot-body {
+  animation-direction: reverse;
+}
+
+.mascot.on-right .mascot-bubble {
+  left: auto;
+  right: 52px;
+  border-radius: 12px 12px 2px 12px;
+  transform-origin: 100% 100%;
+}
+
+.mascot-bubble.is-link {
+  pointer-events: auto;
+  cursor: pointer;
+  background: #ffe3ef;
+  box-shadow: 3px 3px 0 #e5508f;
+}
+
+.mascot-bubble.is-link::after {
+  content: " →";
+  color: #d94d8f;
+}
+
+[data-theme="dark"] .mascot-bubble.is-link {
+  background: #3a2433;
+  color: #ffd0e3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot { transition: none; }
+  .mascot.walking .mascot-body, .mascot.rolling .mascot-body { animation: none; }
+}

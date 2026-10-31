@@ -820,8 +820,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* Mini pixel Aya: idles in the corner and now and then dances,
-   blows kisses, waves or says something. Click her for an action. */
+/* Mini pixel Aya: a small guide in the corner. She reacts to the
+   section being read, now and then walks or rolls to a new spot,
+   and some of her lines are clickable (open the CV, jump to a section). */
 document.addEventListener("DOMContentLoaded", () => {
   const box = document.querySelector("#mascot");
   const body = document.querySelector("#mascot-body");
@@ -841,21 +842,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let busy = false;
+  let lastTalk = 0;
   let bubbleTimer = null;
+  let bubbleAction = null;
+  const seen = new Set();
 
-  function lines() {
+  function t(key) {
     const table = window.siteTranslations || {};
     const lang = document.documentElement.lang === "fr" ? "fr" : "en";
-    const list = table[lang] && table[lang]["mascot.lines"];
-    return list ? list.split("|") : ["Hi, I'm Aya ✦"];
+    return (table[lang] && table[lang][key]) || "";
   }
 
-  function say(text) {
-    bubble.textContent = text;
-    bubble.classList.add("show");
-    clearTimeout(bubbleTimer);
-    bubbleTimer = setTimeout(() => bubble.classList.remove("show"), 3200);
+  function pick(key) {
+    const list = t(key).split("|").filter(Boolean);
+    return list[Math.floor(Math.random() * list.length)] || "";
   }
+
+  function doAction(action) {
+    if (action === "cv") {
+      const button = document.querySelector("#cv-choice-button");
+      if (button) button.click();
+    } else if (action) {
+      const target = document.querySelector(action);
+      if (target) target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  function say(text, action) {
+    if (!text) return;
+    bubble.textContent = text;
+    bubbleAction = action || null;
+    bubble.classList.toggle("is-link", Boolean(action));
+    bubble.classList.add("show");
+    lastTalk = Date.now();
+    clearTimeout(bubbleTimer);
+    bubbleTimer = setTimeout(() => {
+      bubble.classList.remove("show");
+      bubbleAction = null;
+    }, action ? 5200 : 3600);
+  }
+
+  bubble.addEventListener("click", () => {
+    if (bubbleAction) doAction(bubbleAction);
+  });
 
   function burst(symbol, count) {
     for (let i = 0; i < count; i += 1) {
@@ -874,38 +903,99 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => body.classList.remove(move), ms);
   }
 
-  const actions = [
-    () => { play("dance", 1800); burst("♪", 4); },
-    () => { play("kiss", 1200); burst("♥", 5); },
-    () => { play("wave", 1400); say(lines()[0]); },
-    () => { const l = lines(); say(l[1 + Math.floor(Math.random() * (l.length - 1))]); play("hop", 700); }
-  ];
-
-  function act(index) {
-    if (busy) {
-      return;
-    }
-    busy = true;
-    const pick = index !== undefined ? index : Math.floor(Math.random() * actions.length);
-    actions[pick]();
-    setTimeout(() => { busy = false; }, 1900);
+  /* Walking / rolling along the bottom of the screen. */
+  function moveTo(x, roll) {
+    const current = box.getBoundingClientRect().left;
+    box.classList.toggle("facing-left", x < current);
+    box.classList.add(roll ? "rolling" : "walking");
+    box.style.left = `${x}px`;
+    setTimeout(() => {
+      box.classList.remove("rolling", "walking");
+      box.classList.toggle("on-right", x > window.innerWidth / 2);
+    }, 2300);
   }
 
-  body.addEventListener("click", () => act());
+  function wander() {
+    const min = 14;
+    const max = Math.max(min, window.innerWidth - 190);
+    const x = Math.round(min + Math.random() * (max - min));
+    moveTo(x, Math.random() < 0.35);
+  }
+
+  /* Lines tied to the section on screen (each one once per visit). */
+  const sections = {
+    about: { key: "mascot.about" },
+    experience: { key: "mascot.experience" },
+    projects: { key: "mascot.projects" },
+    skills: { key: "mascot.skills" },
+    education: { key: "mascot.education" },
+    contact: { key: "mascot.contact", action: "cv" }
+  };
+
+  const watcher = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const id = entry.target.id;
+      if (!entry.isIntersecting || seen.has(id)) return;
+      seen.add(id);
+      const info = sections[id];
+      const wait = Math.max(0, 4500 - (Date.now() - lastTalk));
+      setTimeout(() => {
+        const rect = entry.target.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) {
+          seen.delete(id);
+          return;
+        }
+        play("hop", 700);
+        say(pick(info.key), info.action);
+      }, wait);
+    });
+  }, { threshold: 0.35 });
+
+  Object.keys(sections).forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) watcher.observe(el);
+  });
+
+  /* Little actions in between. */
+  const actions = [
+    () => { play("dance", 1800); burst("♪", 4); },
+    () => { play("kiss", 1200); burst("♥", 5); say(pick("mascot.kiss")); },
+    () => { play("hop", 700); say(pick("mascot.pitch"), "cv"); },
+    () => { play("wave", 1400); say(pick("mascot.idle"), "#projects"); }
+  ];
+
+  function act() {
+    if (busy) return;
+    busy = true;
+    actions[Math.floor(Math.random() * actions.length)]();
+    setTimeout(() => { busy = false; }, 2000);
+  }
+
+  body.addEventListener("click", act);
 
   closer.addEventListener("click", () => {
     box.remove();
     try { localStorage.setItem("mascot-hidden", "1"); } catch (error) {}
   });
 
-  setTimeout(() => { say(lines()[0]); play("wave", 1400); }, 2500);
+  setTimeout(() => { play("wave", 1400); say(t("mascot.hello")); }, 2200);
 
   if (!calm) {
-    (function loop() {
+    (function loop(step) {
       setTimeout(() => {
-        if (!document.hidden) act();
-        loop();
-      }, 14000 + Math.random() * 7000);
-    })();
+        if (!document.hidden && !busy) {
+          if (step % 3 === 2) wander();
+          else if (Date.now() - lastTalk > 9000) act();
+        }
+        loop(step + 1);
+      }, 11000 + Math.random() * 6000);
+    })(0);
   }
+
+  window.addEventListener("resize", () => {
+    if (box.getBoundingClientRect().left > window.innerWidth - 120) {
+      box.style.left = "14px";
+      box.classList.remove("on-right");
+    }
+  });
 });
