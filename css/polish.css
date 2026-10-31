@@ -384,3 +384,38 @@ nav a.active {
 .skill-box {
   min-height: 0;
 }
+
+/* Watch-demo button: soft pink, gentle float to draw the eye */
+.demo-button,
+[data-theme="dark"] .demo-button {
+  background: #ffe3ef;
+  border-color: #f29bc0;
+  color: #8a1f4f;
+  animation: demo-float 2.6s ease-in-out infinite;
+}
+
+.demo-button span,
+.demo-button b,
+[data-theme="dark"] .demo-button span,
+[data-theme="dark"] .demo-button b {
+  color: #d94d8f;
+}
+
+.demo-button:hover {
+  background: #ffd3e6;
+  animation-play-state: paused;
+}
+
+[data-theme="dark"] .demo-button {
+  background: rgba(242, 155, 192, 0.16);
+  color: #ffc2dc;
+}
+
+@keyframes demo-float {
+  0%, 100% { transform: translateY(0); box-shadow: 0 0 0 0 rgba(242, 155, 192, 0); }
+  50% { transform: translateY(-3px); box-shadow: 0 6px 14px -6px rgba(217, 77, 143, 0.45); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-button { animation: none; }
+}
