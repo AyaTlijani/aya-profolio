@@ -834,10 +834,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   try {
-    if (localStorage.getItem("mascot-hidden") === "1") {
-      box.remove();
-      return;
-    }
+    localStorage.removeItem("mascot-hidden");
   } catch (error) {}
 
   const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -975,7 +972,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   closer.addEventListener("click", () => {
     box.remove();
-    try { localStorage.setItem("mascot-hidden", "1"); } catch (error) {}
   });
 
   setTimeout(() => { play("wave", 1400); say(t("mascot.hello")); }, 2200);

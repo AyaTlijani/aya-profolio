@@ -556,7 +556,8 @@ nav a.active {
 
 .hero-band {
   overflow: hidden;
-  margin: -6px -10px 0;
+  margin: -6px 0 0;
+  width: 100%;
   padding: 14px 0;
   background: var(--accent);
   color: #fff;
@@ -789,4 +790,8 @@ nav a.active {
 @media (prefers-reduced-motion: reduce) {
   .mascot { transition: none; }
   .mascot.walking .mascot-body, .mascot.rolling .mascot-body { animation: none; }
+}
+
+html {
+  overflow-x: clip;
 }
