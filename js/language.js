@@ -196,6 +196,24 @@ document.addEventListener("DOMContentLoaded", () => {
       "projects.scilit.description3":
         "Fine-tuned SciBERT for scientific sentence classification (0.749 macro-F1) and reproduced a published benchmark result (0.855 F1).",
 
+      "projects.mimo.type":
+        "AI AGENT · VOICE · DESKTOP APP",
+
+      "projects.mimo.sub":
+        "Local Voice-Controlled AI Desktop Companion.",
+
+      "projects.watchDemo":
+        "WATCH DEMO",
+
+      "projects.mimo.description1":
+        "Designed and built a fully local desktop AI companion you talk to by voice: “Hey MIMO” wake word, speech recognition (faster-whisper), neural text-to-speech (Piper) and a tool-calling LLM (Ollama), with no cloud.",
+
+      "projects.mimo.description2":
+        "Built a secure LLM agent with least-privilege tools (web search, music, timers, games), URL validation and an action audit log, so the model can never touch the user’s files or system.",
+
+      "projects.mimo.description3":
+        "Created an original animated character with 12 event-driven moods in a cozy lofi room, plus focus timers, three mini-games and 71 automated tests.",
+
       "projects.query.type":
         "LLM AGENTS / TEXT-TO-SQL",
 
@@ -641,6 +659,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
       "projects.scilit.description3":
         "Fine-tuning de SciBERT pour la classification de phrases scientifiques (0,749 de macro-F1) et reproduction d’un résultat publié (0,855 de F1).",
+
+      "projects.mimo.type":
+        "AGENT IA · VOIX · APPLICATION DESKTOP",
+
+      "projects.mimo.sub":
+        "Compagnon IA de bureau, local et piloté à la voix.",
+
+      "projects.watchDemo":
+        "VOIR LA DÉMO",
+
+      "projects.mimo.description1":
+        "Conception et développement d’un compagnon IA de bureau 100 % local, piloté à la voix : mot d’activation « Hey MIMO », reconnaissance vocale (faster-whisper), synthèse vocale neuronale (Piper) et LLM avec appel d’outils (Ollama), sans cloud.",
+
+      "projects.mimo.description2":
+        "Agent LLM sécurisé selon le principe du moindre privilège (recherche web, musique, minuteurs, jeux), avec validation des URL et journal d’audit des actions : le modèle ne peut jamais toucher aux fichiers ni au système de l’utilisateur.",
+
+      "projects.mimo.description3":
+        "Création d’un personnage animé original aux 12 humeurs pilotées par les événements, dans une pièce lofi chaleureuse, avec minuteurs de concentration, trois mini-jeux et 71 tests automatisés.",
 
       "projects.query.type":
         "AGENTS LLM / TEXT-TO-SQL",

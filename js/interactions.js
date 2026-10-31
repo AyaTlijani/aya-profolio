@@ -62,6 +62,31 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
 
+    mimo: {
+      name: "MIMO",
+      title: "MIMO",
+
+      images: [
+        {
+          src: "assets/mimo-1.jpg",
+          alt: "MIMO home screen"
+        },
+        {
+          src: "assets/mimo-2.jpg",
+          alt: "MIMO focus mode at night"
+        },
+        {
+          src: "assets/mimo-3.jpg",
+          alt: "MIMO short break"
+        },
+        {
+          src: "assets/mimo-4.jpg",
+          alt: "MIMO moods and actions"
+        }
+      ]
+    },
+
+
     querypilot: {
       name: "QUERYPILOT",
       title: "QueryPilot",
