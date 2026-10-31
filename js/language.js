@@ -343,35 +343,41 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero.sticker4":
         "Monastir, TN ✦",
 
-      "mascot.hello":
+      "mascot.s.hello":
         "Hi, I'm Aya ✦ welcome to my corner!",
 
-      "mascot.about":
+      "mascot.s.about":
         "Yep, that's me in the yellow hoodie ☀",
 
-      "mascot.experience":
-        "Fun fact: I do research at the University of East London 🎓|That research paper? I co-wrote it ✍️",
+      "mascot.s.uel":
+        "My research at the University of East London: we wrote a paper on it ✍️",
 
-      "mascot.projects":
-        "SciLit checks every sentence it writes ✦|Psst… MIMO has a demo video, he's my little buddy ▶",
+      "mascot.s.amsys":
+        "Computer vision R&D, still going strong 💪",
 
-      "mascot.skills":
-        "Python is my comfort language ♡|I speak PyTorch fluently 🔥",
+      "mascot.s.scilit":
+        "SciLit checks every sentence it writes against its source ✦",
 
-      "mascot.education":
+      "mascot.s.mimo":
+        "MIMO is my little buddy, watch him in action ▶",
+
+      "mascot.s.querypilot":
+        "QueryPilot fixes its own SQL mistakes, tested on a real benchmark 🔧",
+
+      "mascot.s.surgisight":
+        "Still building this one: AI that understands surgery videos 🩺",
+
+      "mascot.s.skills":
+        "Python is my comfort language ♡",
+
+      "mascot.s.education":
         "Engineering student, graduating in 2027 🎓",
 
-      "mascot.contact":
+      "mascot.s.contact":
         "Grab my CV and let's build something together ✦",
 
-      "mascot.pitch":
-        "Looking for a PFE intern in 2027? 👀 Click for my CV|I'd love to join your team ✦ my CV is one click away",
-
-      "mascot.idle":
-        "Click me to see my projects ✦|Have you seen my projects yet? 👀",
-
-      "mascot.kiss":
-        "Thanks for stopping by ✦|New idea loading… 💡",
+      "mascot.s.pitch":
+        "Looking for a PFE intern in 2027? 👀 Click for my CV",
 
       /* VIEWER */
 
@@ -849,35 +855,41 @@ document.addEventListener("DOMContentLoaded", () => {
       "hero.sticker4":
         "Monastir, TN ✦",
 
-      "mascot.hello":
+      "mascot.s.hello":
         "Coucou, moi c'est Aya ✦ bienvenue chez moi !",
 
-      "mascot.about":
+      "mascot.s.about":
         "Oui, c'est bien moi en sweat jaune ☀",
 
-      "mascot.experience":
-        "Le savais-tu ? Je fais de la recherche à l'University of East London 🎓|Cet article de recherche ? Je l'ai co-écrit ✍️",
+      "mascot.s.uel":
+        "Ma recherche à l'University of East London : on en a tiré un article ✍️",
 
-      "mascot.projects":
-        "SciLit vérifie chaque phrase qu'il écrit ✦|Psst… MIMO a une vidéo démo, c'est mon petit compagnon ▶",
+      "mascot.s.amsys":
+        "De la R&D en computer vision, et ça continue 💪",
 
-      "mascot.skills":
-        "Python, c'est ma langue préférée ♡|Je parle PyTorch couramment 🔥",
+      "mascot.s.scilit":
+        "SciLit vérifie chaque phrase qu'il écrit face à sa source ✦",
 
-      "mascot.education":
+      "mascot.s.mimo":
+        "MIMO, c'est mon petit compagnon : regarde-le en action ▶",
+
+      "mascot.s.querypilot":
+        "QueryPilot corrige ses propres erreurs SQL, testé sur un vrai benchmark 🔧",
+
+      "mascot.s.surgisight":
+        "Encore en construction : une IA qui comprend les vidéos de chirurgie 🩺",
+
+      "mascot.s.skills":
+        "Python, c'est ma langue préférée ♡",
+
+      "mascot.s.education":
         "Élève ingénieure, diplômée en 2027 🎓",
 
-      "mascot.contact":
+      "mascot.s.contact":
         "Prends mon CV et construisons quelque chose ensemble ✦",
 
-      "mascot.pitch":
-        "Vous cherchez une stagiaire PFE en 2027 ? 👀 Cliquez pour mon CV|J'adorerais rejoindre votre équipe ✦ mon CV est à un clic",
-
-      "mascot.idle":
-        "Clique ici pour voir mes projets ✦|Tu as vu mes projets ? 👀",
-
-      "mascot.kiss":
-        "Merci de ta visite ✦|Nouvelle idée en cours… 💡",
+      "mascot.s.pitch":
+        "Vous cherchez une stagiaire PFE en 2027 ? 👀 Cliquez pour mon CV",
 
       /* VIEWER */
 

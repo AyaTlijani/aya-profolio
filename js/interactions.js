@@ -820,9 +820,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* Mini pixel Aya: a small guide in the corner. She reacts to the
-   section being read, now and then walks or rolls to a new spot,
-   and some of her lines are clickable (open the CV, jump to a section). */
+/* Mini pixel Aya: a scripted guide. Each part of the page has a planned
+   reaction (a line, a small move, or nothing), shown once, in reading order.
+   Clicking her repeats the line for what is on screen. */
 document.addEventListener("DOMContentLoaded", () => {
   const box = document.querySelector("#mascot");
   const body = document.querySelector("#mascot-body");
@@ -833,16 +833,38 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  try {
-    localStorage.removeItem("mascot-hidden");
-  } catch (error) {}
+  try { localStorage.removeItem("mascot-hidden"); } catch (error) {}
 
   const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let busy = false;
-  let lastTalk = 0;
+  const exp = document.querySelectorAll(".experience-card");
+  const proj = document.querySelectorAll(".project-card");
+
+  /* The plan: element, what she says (translation key), what she does,
+     an optional click target for her bubble, and where she stands. */
+  const plan = [
+    { el: document.querySelector("#home"), line: "mascot.s.hello", move: "wave", side: "left" },
+    { el: document.querySelector("#about"), line: "mascot.s.about", move: "hop" },
+    { el: exp[0], line: "mascot.s.uel", move: "sparkle" },
+    { el: exp[1], line: "mascot.s.amsys", move: "hop" },
+    { el: exp[2], move: "hop" },
+    { el: exp[3] },
+    { el: proj[0], line: "mascot.s.scilit", move: "sparkle", side: "right" },
+    { el: proj[1], line: "mascot.s.mimo", move: "dance", link: "assets/mimo-demo.mp4" },
+    { el: proj[2], line: "mascot.s.querypilot", move: "hop" },
+    { el: proj[3], line: "mascot.s.surgisight", move: "hop" },
+    { el: proj[4], move: "hop" },
+    { el: proj[5] },
+    { el: document.querySelector("#skills"), line: "mascot.s.skills", move: "dance", side: "left" },
+    { el: document.querySelector("#education"), line: "mascot.s.education", move: "hop" },
+    { el: document.querySelector("#contact"), line: "mascot.s.contact", move: "sparkle", link: "cv" }
+  ].filter((step) => step.el);
+
   let bubbleTimer = null;
-  let bubbleAction = null;
-  const seen = new Set();
+  let bubbleLink = null;
+  let lastTalk = 0;
+  let current = plan[0];
+  const queue = [];
+  let running = false;
 
   function t(key) {
     const table = window.siteTranslations || {};
@@ -850,37 +872,32 @@ document.addEventListener("DOMContentLoaded", () => {
     return (table[lang] && table[lang][key]) || "";
   }
 
-  function pick(key) {
-    const list = t(key).split("|").filter(Boolean);
-    return list[Math.floor(Math.random() * list.length)] || "";
+  function onScreen(el) {
+    const r = el.getBoundingClientRect();
+    return r.bottom > 80 && r.top < window.innerHeight - 80;
   }
 
-  function doAction(action) {
-    if (action === "cv") {
-      const button = document.querySelector("#cv-choice-button");
-      if (button) button.click();
-    } else if (action) {
-      const target = document.querySelector(action);
-      if (target) target.scrollIntoView({ behavior: "smooth" });
-    }
-  }
-
-  function say(text, action) {
+  function say(text, link) {
     if (!text) return;
     bubble.textContent = text;
-    bubbleAction = action || null;
-    bubble.classList.toggle("is-link", Boolean(action));
+    bubbleLink = link || null;
+    bubble.classList.toggle("is-link", Boolean(link));
     bubble.classList.add("show");
     lastTalk = Date.now();
     clearTimeout(bubbleTimer);
     bubbleTimer = setTimeout(() => {
       bubble.classList.remove("show");
-      bubbleAction = null;
-    }, action ? 5200 : 3600);
+      bubbleLink = null;
+    }, link ? 5500 : 4000);
   }
 
   bubble.addEventListener("click", () => {
-    if (bubbleAction) doAction(bubbleAction);
+    if (bubbleLink === "cv") {
+      const button = document.querySelector("#cv-choice-button");
+      if (button) button.click();
+    } else if (bubbleLink) {
+      window.open(bubbleLink, "_blank", "noopener");
+    }
   });
 
   function burst(symbol, count) {
@@ -895,103 +912,81 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function play(move, ms) {
-    body.classList.add(move);
-    setTimeout(() => body.classList.remove(move), ms);
+  function play(move) {
+    if (!move || calm) return;
+    const map = { wave: ["wave", 1400], hop: ["hop", 700], dance: ["dance", 1800], sparkle: ["kiss", 1200] };
+    const [cls, ms] = map[move];
+    body.classList.add(cls);
+    setTimeout(() => body.classList.remove(cls), ms);
+    if (move === "dance") burst("♪", 4);
+    if (move === "sparkle") burst("✦", 4);
   }
 
-  /* Walking / rolling along the bottom of the screen. */
-  function moveTo(x, roll) {
-    const current = box.getBoundingClientRect().left;
-    box.classList.toggle("facing-left", x < current);
-    box.classList.add(roll ? "rolling" : "walking");
+  function goTo(side) {
+    if (!side || calm) return;
+    const x = side === "right" ? Math.max(14, window.innerWidth - 190) : 14;
+    const now = box.getBoundingClientRect().left;
+    if (Math.abs(now - x) < 20) return;
+    box.classList.toggle("facing-left", x < now);
+    box.classList.add("walking");
     box.style.left = `${x}px`;
     setTimeout(() => {
-      box.classList.remove("rolling", "walking");
-      box.classList.toggle("on-right", x > window.innerWidth / 2);
+      box.classList.remove("walking");
+      box.classList.toggle("on-right", side === "right");
     }, 2300);
   }
 
-  function wander() {
-    const min = 14;
-    const max = Math.max(min, window.innerWidth - 190);
-    const x = Math.round(min + Math.random() * (max - min));
-    moveTo(x, Math.random() < 0.35);
+  function perform(step) {
+    current = step;
+    goTo(step.side);
+    play(step.move);
+    if (step.line) say(t(step.line), step.link);
   }
 
-  /* Lines tied to the section on screen (each one once per visit). */
-  const sections = {
-    about: { key: "mascot.about" },
-    experience: { key: "mascot.experience" },
-    projects: { key: "mascot.projects" },
-    skills: { key: "mascot.skills" },
-    education: { key: "mascot.education" },
-    contact: { key: "mascot.contact", action: "cv" }
-  };
+  /* Play reactions one at a time, in page order, spaced out. */
+  function next() {
+    if (!queue.length) { running = false; return; }
+    running = true;
+    const step = queue.shift();
+    if (!onScreen(step.el)) { next(); return; }
+    const gap = step.line ? Math.max(0, 3200 - (Date.now() - lastTalk)) : 0;
+    setTimeout(() => {
+      if (onScreen(step.el)) perform(step);
+      setTimeout(next, step.line ? 2600 : 900);
+    }, gap);
+  }
 
+  const done = new Set();
   const watcher = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const id = entry.target.id;
-      if (!entry.isIntersecting || seen.has(id)) return;
-      seen.add(id);
-      const info = sections[id];
-      const wait = Math.max(0, 4500 - (Date.now() - lastTalk));
-      setTimeout(() => {
-        const rect = entry.target.getBoundingClientRect();
-        if (rect.bottom < 0 || rect.top > window.innerHeight) {
-          seen.delete(id);
-          return;
-        }
-        play("hop", 700);
-        say(pick(info.key), info.action);
-      }, wait);
-    });
-  }, { threshold: 0.35 });
+    entries
+      .filter((e) => e.isIntersecting)
+      .map((e) => plan.find((s) => s.el === e.target))
+      .filter((s) => s && !done.has(s))
+      .sort((a, b) => plan.indexOf(a) - plan.indexOf(b))
+      .forEach((s) => { done.add(s); queue.push(s); });
+    if (!running) next();
+  }, { threshold: 0.45 });
 
-  Object.keys(sections).forEach((id) => {
-    const el = document.getElementById(id);
-    if (el) watcher.observe(el);
+  plan.forEach((s) => watcher.observe(s.el));
+
+  /* Clicking her: repeat what fits the part on screen, or a short pitch. */
+  body.addEventListener("click", () => {
+    const visible = plan.filter((s) => s.line && onScreen(s.el));
+    const step = visible[0] || current;
+    if (step && step.line) {
+      play(step.move || "hop");
+      say(t(step.line), step.link);
+    } else {
+      play("hop");
+      say(t("mascot.s.pitch"), "cv");
+    }
   });
 
-  /* Little actions in between. */
-  const actions = [
-    () => { play("dance", 1800); burst("♪", 4); },
-    () => { play("kiss", 1200); burst("✦", 5); say(pick("mascot.kiss")); },
-    () => { play("hop", 700); say(pick("mascot.pitch"), "cv"); },
-    () => { play("wave", 1400); say(pick("mascot.idle"), "#projects"); }
-  ];
-
-  function act() {
-    if (busy) return;
-    busy = true;
-    actions[Math.floor(Math.random() * actions.length)]();
-    setTimeout(() => { busy = false; }, 2000);
-  }
-
-  body.addEventListener("click", act);
-
-  closer.addEventListener("click", () => {
-    box.remove();
-  });
-
-  setTimeout(() => { play("wave", 1400); say(t("mascot.hello")); }, 2200);
-
-  if (!calm) {
-    (function loop(step) {
-      setTimeout(() => {
-        if (!document.hidden && !busy) {
-          if (step % 3 === 2) wander();
-          else if (Date.now() - lastTalk > 9000) act();
-        }
-        loop(step + 1);
-      }, 11000 + Math.random() * 6000);
-    })(0);
-  }
+  closer.addEventListener("click", () => box.remove());
 
   window.addEventListener("resize", () => {
-    if (box.getBoundingClientRect().left > window.innerWidth - 120) {
-      box.style.left = "14px";
-      box.classList.remove("on-right");
+    if (box.classList.contains("on-right")) {
+      box.style.left = `${Math.max(14, window.innerWidth - 190)}px`;
     }
   });
 });
