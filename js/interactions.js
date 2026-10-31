@@ -82,6 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           src: "assets/mimo-4.jpg",
           alt: "MIMO moods and actions"
+        },
+        {
+          src: "assets/mimo-5.jpg",
+          alt: "MIMO floating companion playing music"
         }
       ]
     },
