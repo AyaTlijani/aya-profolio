@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Developing an AI system that analyzes surgery videos to recognize each stage of the operation and the instruments used, to produce automatic surgical reports.",
 
       "projects.surgi.description2":
-        "Trained a deep learning model that identifies surgical instruments with 95% accuracy on unseen videos.",
+        "Fine-tuned a ConvNeXt model that detects surgical instruments with 95.5% mAP and recognizes the surgical phase with 83.9% accuracy on unseen videos.",
 
       "projects.smart.type":
         "FULL-STACK / ROUTE OPTIMIZATION",
@@ -751,7 +751,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Développement d’un système d’IA qui analyse des vidéos de chirurgie pour reconnaître chaque étape de l’opération et les instruments utilisés, afin de générer des rapports chirurgicaux automatiques.",
 
       "projects.surgi.description2":
-        "Entraînement d’un modèle de deep learning qui identifie les instruments chirurgicaux avec 95 % de précision sur des vidéos inédites.",
+        "Fine-tuning d’un modèle ConvNeXt qui détecte les instruments chirurgicaux avec 95,5 % de mAP et reconnaît la phase opératoire avec 83,9 % de précision sur des vidéos inédites.",
 
       "projects.smart.type":
         "FULL-STACK / OPTIMISATION DE TOURNÉES",
