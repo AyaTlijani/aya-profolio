@@ -448,7 +448,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "English CV ↓",
 
       "contact.frenchCV":
-        "CV français ↓",
+        "French CV · 2 columns ↓",
+
+      "contact.frenchCV1":
+        "French CV · 1 column ↓",
 
       /* GAME */
 
@@ -485,7 +488,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Which CV would you like?",
 
       "cv.description":
-        "Choose the language you want to download.",
+        "Choose the version you want to download.",
 
       "cv.close":
         "Close CV chooser",
@@ -960,7 +963,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "CV anglais ↓",
 
       "contact.frenchCV":
-        "CV français ↓",
+        "CV français · 2 colonnes ↓",
+
+      "contact.frenchCV1":
+        "CV français · 1 colonne ↓",
 
       /* GAME */
 
@@ -997,7 +1003,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Quel CV souhaitez-vous télécharger ?",
 
       "cv.description":
-        "Choisissez la langue du CV à télécharger.",
+        "Choisissez la version du CV à télécharger.",
 
       "cv.close":
         "Fermer le choix du CV",
